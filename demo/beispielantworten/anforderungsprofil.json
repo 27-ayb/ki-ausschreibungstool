@@ -1,0 +1,66 @@
+{
+  "auftragsgegenstand": "Elektroinstallation und Gebäudeautomation (KNX) für den Neubau einer Grundschule",
+  "abgabefrist": "2026-11-27",
+  "geschaetztes_volumen_eur": 480000,
+  "soa": [
+    {
+      "kategorie": "OS30",
+      "klassifikation": "II",
+      "beleg": { "seite": 7, "zitat": "È richiesta l'attestazione SOA nella categoria OS30, classifica II o superiore." }
+    }
+  ],
+  "referenzen": {
+    "kategorie": "Gebäudetechnik",
+    "zeitraum_jahre": 10,
+    "mindestwert_eur": 100000,
+    "anzahl": 1,
+    "nur_oeffentliche_auftraggeber": false,
+    "beleg": { "seite": 9, "zitat": "negli ultimi dieci anni, almeno un contratto analogo (impianti elettrici e di automazione in edifici) di importo non inferiore a euro 100.000,00" }
+  },
+  "zertifikate": [
+    {
+      "name": "ISO 9001",
+      "pflicht": true,
+      "punkte": null,
+      "beleg": { "seite": 10, "zitat": "certificazione del sistema di gestione per la qualità ISO 9001" }
+    },
+    {
+      "name": "ISO 14001",
+      "pflicht": true,
+      "punkte": null,
+      "beleg": { "seite": 10, "zitat": "certificazione del sistema di gestione ambientale ISO 14001, in conformità ai Criteri Ambientali Minimi (CAM)" }
+    },
+    {
+      "name": "ISO 45001",
+      "pflicht": false,
+      "punkte": 4,
+      "beleg": { "seite": 14, "zitat": "Al concorrente in possesso della certificazione ISO 45001 sono attribuiti 4 punti." }
+    },
+    {
+      "name": "UNI/PdR 125:2022",
+      "pflicht": false,
+      "punkte": 3,
+      "beleg": { "seite": 14, "zitat": "certificazione della parità di genere UNI/PdR 125:2022 sono attribuiti 3 punti" }
+    }
+  ],
+  "zuschlagskriterien": [
+    {
+      "kriterium": "Technisches Angebot",
+      "punkte": 80,
+      "beleg": { "seite": 13, "zitat": "offerta tecnica 80 punti" }
+    },
+    {
+      "kriterium": "Wirtschaftliches Angebot",
+      "punkte": 20,
+      "beleg": { "seite": 13, "zitat": "offerta economica 20 punti" }
+    },
+    {
+      "kriterium": "Technischer Bericht",
+      "punkte": 35,
+      "beleg": { "seite": 13, "zitat": "Relazione tecnica: massimo 35 punti." }
+    }
+  ],
+  "offene_fragen": [
+    "Art. 4.2 verweist beim Avvalimento nur allgemein auf die geltenden Vorschriften. Ist der Nachweis der SOA-Qualifikation über einen Partner zulässig?"
+  ]
+}

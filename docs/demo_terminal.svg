@@ -1,0 +1,302 @@
+<svg class="rich-terminal" viewBox="0 0 1238 1514.0" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generated with Rich https://www.textualize.io -->
+    <style>
+
+    @font-face {
+        font-family: "Fira Code";
+        src: local("FiraCode-Regular"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Regular.woff2") format("woff2"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Regular.woff") format("woff");
+        font-style: normal;
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Fira Code";
+        src: local("FiraCode-Bold"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Bold.woff2") format("woff2"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Bold.woff") format("woff");
+        font-style: bold;
+        font-weight: 700;
+    }
+
+    .terminal-903400804-matrix {
+        font-family: Fira Code, monospace;
+        font-size: 20px;
+        line-height: 24.4px;
+        font-variant-east-asian: full-width;
+    }
+
+    .terminal-903400804-title {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: arial;
+    }
+
+    .terminal-903400804-r1 { fill: #5aa9e6 }
+.terminal-903400804-r2 { fill: #5aa9e6;font-weight: bold }
+.terminal-903400804-r3 { fill: #c5c8c6 }
+.terminal-903400804-r4 { fill: #8a96a3 }
+.terminal-903400804-r5 { fill: #c5c8c6;font-weight: bold }
+.terminal-903400804-r6 { fill: #e0533f }
+.terminal-903400804-r7 { fill: #43a85a }
+.terminal-903400804-r8 { fill: #e8a33a }
+.terminal-903400804-r9 { fill: #43a85a;font-weight: bold }
+    </style>
+
+    <defs>
+    <clipPath id="terminal-903400804-clip-terminal">
+      <rect x="0" y="0" width="1219.0" height="1463.0" />
+    </clipPath>
+    <clipPath id="terminal-903400804-line-0">
+    <rect x="0" y="1.5" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-1">
+    <rect x="0" y="25.9" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-2">
+    <rect x="0" y="50.3" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-3">
+    <rect x="0" y="74.7" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-4">
+    <rect x="0" y="99.1" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-5">
+    <rect x="0" y="123.5" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-6">
+    <rect x="0" y="147.9" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-7">
+    <rect x="0" y="172.3" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-8">
+    <rect x="0" y="196.7" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-9">
+    <rect x="0" y="221.1" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-10">
+    <rect x="0" y="245.5" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-11">
+    <rect x="0" y="269.9" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-12">
+    <rect x="0" y="294.3" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-13">
+    <rect x="0" y="318.7" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-14">
+    <rect x="0" y="343.1" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-15">
+    <rect x="0" y="367.5" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-16">
+    <rect x="0" y="391.9" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-17">
+    <rect x="0" y="416.3" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-18">
+    <rect x="0" y="440.7" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-19">
+    <rect x="0" y="465.1" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-20">
+    <rect x="0" y="489.5" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-21">
+    <rect x="0" y="513.9" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-22">
+    <rect x="0" y="538.3" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-23">
+    <rect x="0" y="562.7" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-24">
+    <rect x="0" y="587.1" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-25">
+    <rect x="0" y="611.5" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-26">
+    <rect x="0" y="635.9" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-27">
+    <rect x="0" y="660.3" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-28">
+    <rect x="0" y="684.7" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-29">
+    <rect x="0" y="709.1" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-30">
+    <rect x="0" y="733.5" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-31">
+    <rect x="0" y="757.9" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-32">
+    <rect x="0" y="782.3" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-33">
+    <rect x="0" y="806.7" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-34">
+    <rect x="0" y="831.1" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-35">
+    <rect x="0" y="855.5" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-36">
+    <rect x="0" y="879.9" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-37">
+    <rect x="0" y="904.3" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-38">
+    <rect x="0" y="928.7" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-39">
+    <rect x="0" y="953.1" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-40">
+    <rect x="0" y="977.5" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-41">
+    <rect x="0" y="1001.9" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-42">
+    <rect x="0" y="1026.3" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-43">
+    <rect x="0" y="1050.7" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-44">
+    <rect x="0" y="1075.1" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-45">
+    <rect x="0" y="1099.5" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-46">
+    <rect x="0" y="1123.9" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-47">
+    <rect x="0" y="1148.3" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-48">
+    <rect x="0" y="1172.7" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-49">
+    <rect x="0" y="1197.1" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-50">
+    <rect x="0" y="1221.5" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-51">
+    <rect x="0" y="1245.9" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-52">
+    <rect x="0" y="1270.3" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-53">
+    <rect x="0" y="1294.7" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-54">
+    <rect x="0" y="1319.1" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-55">
+    <rect x="0" y="1343.5" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-56">
+    <rect x="0" y="1367.9" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-57">
+    <rect x="0" y="1392.3" width="1220" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-903400804-line-58">
+    <rect x="0" y="1416.7" width="1220" height="24.65"/>
+            </clipPath>
+    </defs>
+
+    <rect fill="#292929" stroke="rgba(255,255,255,0.35)" stroke-width="1" x="1" y="1" width="1236" height="1512" rx="8"/><text class="terminal-903400804-title" fill="#c5c8c6" text-anchor="middle" x="618" y="27">KI-Ausschreibungsassistent&#160;·&#160;Demo</text>
+            <g transform="translate(26,22)">
+            <circle cx="0" cy="0" r="7" fill="#ff5f57"/>
+            <circle cx="22" cy="0" r="7" fill="#febc2e"/>
+            <circle cx="44" cy="0" r="7" fill="#28c840"/>
+            </g>
+        
+    <g transform="translate(9, 41)" clip-path="url(#terminal-903400804-clip-terminal)">
+    <rect fill="#5aa9e6" x="0" y="147.9" width="36.6" height="24.65" shape-rendering="crispEdges"/><rect fill="#8a96a3" x="439.2" y="147.9" width="36.6" height="24.65" shape-rendering="crispEdges"/><rect fill="#8a96a3" x="0" y="660.3" width="36.6" height="24.65" shape-rendering="crispEdges"/><rect fill="#5aa9e6" x="0" y="953.1" width="36.6" height="24.65" shape-rendering="crispEdges"/><rect fill="#8a96a3" x="451.4" y="953.1" width="36.6" height="24.65" shape-rendering="crispEdges"/>
+    <g class="terminal-903400804-matrix">
+    <text class="terminal-903400804-r1" x="0" y="20" textLength="24.4" clip-path="url(#terminal-903400804-line-0)">╭─</text><text class="terminal-903400804-r2" x="36.6" y="20" textLength="317.2" clip-path="url(#terminal-903400804-line-0)">KI-Ausschreibungsassistent</text><text class="terminal-903400804-r1" x="353.8" y="20" textLength="122" clip-path="url(#terminal-903400804-line-0)">&#160;&#160;·&#160;&#160;Demo&#160;</text><text class="terminal-903400804-r1" x="475.8" y="20" textLength="719.8" clip-path="url(#terminal-903400804-line-0)">───────────────────────────────────────────────────────────</text><text class="terminal-903400804-r1" x="1195.6" y="20" textLength="24.4" clip-path="url(#terminal-903400804-line-0)">─╮</text><text class="terminal-903400804-r3" x="1220" y="20" textLength="12.2" clip-path="url(#terminal-903400804-line-0)">
+</text><text class="terminal-903400804-r1" x="0" y="44.4" textLength="12.2" clip-path="url(#terminal-903400804-line-1)">│</text><text class="terminal-903400804-r1" x="1207.8" y="44.4" textLength="12.2" clip-path="url(#terminal-903400804-line-1)">│</text><text class="terminal-903400804-r3" x="1220" y="44.4" textLength="12.2" clip-path="url(#terminal-903400804-line-1)">
+</text><text class="terminal-903400804-r1" x="0" y="68.8" textLength="12.2" clip-path="url(#terminal-903400804-line-2)">│</text><text class="terminal-903400804-r4" x="36.6" y="68.8" textLength="85.4" clip-path="url(#terminal-903400804-line-2)">Eingabe</text><text class="terminal-903400804-r3" x="146.4" y="68.8" textLength="829.6" clip-path="url(#terminal-903400804-line-2)">ausschreibung_fiktiv_tal.txt&#160;&#160;(Italienisch)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r1" x="1207.8" y="68.8" textLength="12.2" clip-path="url(#terminal-903400804-line-2)">│</text><text class="terminal-903400804-r3" x="1220" y="68.8" textLength="12.2" clip-path="url(#terminal-903400804-line-2)">
+</text><text class="terminal-903400804-r1" x="0" y="93.2" textLength="12.2" clip-path="url(#terminal-903400804-line-3)">│</text><text class="terminal-903400804-r4" x="36.6" y="93.2" textLength="85.4" clip-path="url(#terminal-903400804-line-3)">KI&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="146.4" y="93.2" textLength="829.6" clip-path="url(#terminal-903400804-line-3)">offline,&#160;vorbereitete&#160;Beispielantworten&#160;(alle&#160;Prüfungen&#160;laufen&#160;echt)</text><text class="terminal-903400804-r1" x="1207.8" y="93.2" textLength="12.2" clip-path="url(#terminal-903400804-line-3)">│</text><text class="terminal-903400804-r3" x="1220" y="93.2" textLength="12.2" clip-path="url(#terminal-903400804-line-3)">
+</text><text class="terminal-903400804-r1" x="0" y="117.6" textLength="12.2" clip-path="url(#terminal-903400804-line-4)">│</text><text class="terminal-903400804-r1" x="1207.8" y="117.6" textLength="12.2" clip-path="url(#terminal-903400804-line-4)">│</text><text class="terminal-903400804-r3" x="1220" y="117.6" textLength="12.2" clip-path="url(#terminal-903400804-line-4)">
+</text><text class="terminal-903400804-r1" x="0" y="142" textLength="1220" clip-path="url(#terminal-903400804-line-5)">╰──────────────────────────────────────────────────────────────────────────────────────────────────╯</text><text class="terminal-903400804-r3" x="1220" y="142" textLength="12.2" clip-path="url(#terminal-903400804-line-5)">
+</text><text class="terminal-903400804-r5" x="0" y="166.4" textLength="36.6" clip-path="url(#terminal-903400804-line-6)">&#160;1&#160;</text><text class="terminal-903400804-r5" x="61" y="166.4" textLength="231.8" clip-path="url(#terminal-903400804-line-6)">Anforderungsanalyse</text><text class="terminal-903400804-r1" x="329.4" y="166.4" textLength="24.4" clip-path="url(#terminal-903400804-line-6)">KI</text><text class="terminal-903400804-r3" x="353.8" y="166.4" textLength="85.4" clip-path="url(#terminal-903400804-line-6)">&#160;&#160;&#160;+&#160;&#160;&#160;</text><text class="terminal-903400804-r5" x="439.2" y="166.4" textLength="36.6" clip-path="url(#terminal-903400804-line-6)">&#160;2&#160;</text><text class="terminal-903400804-r5" x="500.2" y="166.4" textLength="183" clip-path="url(#terminal-903400804-line-6)">Grounding-Check</text><text class="terminal-903400804-r4" x="719.8" y="166.4" textLength="48.8" clip-path="url(#terminal-903400804-line-6)">Code</text><text class="terminal-903400804-r3" x="1220" y="166.4" textLength="12.2" clip-path="url(#terminal-903400804-line-6)">
+</text><text class="terminal-903400804-r4" x="0" y="190.8" textLength="170.8" clip-path="url(#terminal-903400804-line-7)">&#160;&#160;Gegenstand&#160;&#160;</text><text class="terminal-903400804-r3" x="170.8" y="190.8" textLength="976" clip-path="url(#terminal-903400804-line-7)">Elektroinstallation&#160;und&#160;Gebäudeautomation&#160;(KNX)&#160;für&#160;den&#160;Neubau&#160;einer&#160;Grundschule</text><text class="terminal-903400804-r3" x="1220" y="190.8" textLength="12.2" clip-path="url(#terminal-903400804-line-7)">
+</text><text class="terminal-903400804-r4" x="0" y="215.2" textLength="170.8" clip-path="url(#terminal-903400804-line-8)">&#160;&#160;Abgabe&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="170.8" y="215.2" textLength="122" clip-path="url(#terminal-903400804-line-8)">27.11.2026</text><text class="terminal-903400804-r4" x="292.8" y="215.2" textLength="170.8" clip-path="url(#terminal-903400804-line-8)">&#160;&#160;&#160;&#160;&#160;Volumen&#160;&#160;</text><text class="terminal-903400804-r3" x="463.6" y="215.2" textLength="109.8" clip-path="url(#terminal-903400804-line-8)">480.000&#160;€</text><text class="terminal-903400804-r3" x="1220" y="215.2" textLength="12.2" clip-path="url(#terminal-903400804-line-8)">
+</text><text class="terminal-903400804-r3" x="1220" y="239.6" textLength="12.2" clip-path="url(#terminal-903400804-line-9)">
+</text><text class="terminal-903400804-r4" x="24.4" y="264" textLength="414.8" clip-path="url(#terminal-903400804-line-10)">Anforderung&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r4" x="475.8" y="264" textLength="268.4" clip-path="url(#terminal-903400804-line-10)">Art&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r4" x="780.8" y="264" textLength="414.8" clip-path="url(#terminal-903400804-line-10)">Beleg&#160;im&#160;Original&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="264" textLength="12.2" clip-path="url(#terminal-903400804-line-10)">
+</text><text class="terminal-903400804-r3" x="0" y="288.4" textLength="1220" clip-path="url(#terminal-903400804-line-11)">&#160;──────────────────────────────────────────────────────────────────────────────────────────────────&#160;</text><text class="terminal-903400804-r3" x="1220" y="288.4" textLength="12.2" clip-path="url(#terminal-903400804-line-11)">
+</text><text class="terminal-903400804-r3" x="24.4" y="312.8" textLength="414.8" clip-path="url(#terminal-903400804-line-12)">SOA&#160;OS30,&#160;Klasse&#160;II&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r6" x="475.8" y="312.8" textLength="268.4" clip-path="url(#terminal-903400804-line-12)">Ausschluss&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r7" x="780.8" y="312.8" textLength="414.8" clip-path="url(#terminal-903400804-line-12)">●&#160;S.&#160;7,&#160;Zitat&#160;gefunden&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="312.8" textLength="12.2" clip-path="url(#terminal-903400804-line-12)">
+</text><text class="terminal-903400804-r3" x="24.4" y="337.2" textLength="414.8" clip-path="url(#terminal-903400804-line-13)">1&#160;Referenz&#160;Gebäudetechnik,&#160;10&#160;J.,&#160;</text><text class="terminal-903400804-r6" x="475.8" y="337.2" textLength="268.4" clip-path="url(#terminal-903400804-line-13)">Ausschluss&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r7" x="780.8" y="337.2" textLength="414.8" clip-path="url(#terminal-903400804-line-13)">●&#160;S.&#160;9,&#160;Zitat&#160;gefunden&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="337.2" textLength="12.2" clip-path="url(#terminal-903400804-line-13)">
+</text><text class="terminal-903400804-r3" x="24.4" y="361.6" textLength="414.8" clip-path="url(#terminal-903400804-line-14)">≥&#160;100.000&#160;€&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="361.6" textLength="12.2" clip-path="url(#terminal-903400804-line-14)">
+</text><text class="terminal-903400804-r3" x="24.4" y="386" textLength="414.8" clip-path="url(#terminal-903400804-line-15)">ISO&#160;9001&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r6" x="475.8" y="386" textLength="268.4" clip-path="url(#terminal-903400804-line-15)">Ausschluss&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r7" x="780.8" y="386" textLength="414.8" clip-path="url(#terminal-903400804-line-15)">●&#160;S.&#160;10,&#160;Zitat&#160;gefunden&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="386" textLength="12.2" clip-path="url(#terminal-903400804-line-15)">
+</text><text class="terminal-903400804-r3" x="24.4" y="410.4" textLength="414.8" clip-path="url(#terminal-903400804-line-16)">ISO&#160;14001&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r6" x="475.8" y="410.4" textLength="268.4" clip-path="url(#terminal-903400804-line-16)">Ausschluss&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r7" x="780.8" y="410.4" textLength="414.8" clip-path="url(#terminal-903400804-line-16)">●&#160;S.&#160;10,&#160;Zitat&#160;gefunden&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="410.4" textLength="12.2" clip-path="url(#terminal-903400804-line-16)">
+</text><text class="terminal-903400804-r3" x="24.4" y="434.8" textLength="414.8" clip-path="url(#terminal-903400804-line-17)">ISO&#160;45001&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r1" x="475.8" y="434.8" textLength="268.4" clip-path="url(#terminal-903400804-line-17)">4&#160;Punkte&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r7" x="780.8" y="434.8" textLength="414.8" clip-path="url(#terminal-903400804-line-17)">●&#160;S.&#160;14,&#160;Zitat&#160;gefunden&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="434.8" textLength="12.2" clip-path="url(#terminal-903400804-line-17)">
+</text><text class="terminal-903400804-r3" x="24.4" y="459.2" textLength="414.8" clip-path="url(#terminal-903400804-line-18)">UNI/PdR&#160;125:2022&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r1" x="475.8" y="459.2" textLength="268.4" clip-path="url(#terminal-903400804-line-18)">3&#160;Punkte&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r7" x="780.8" y="459.2" textLength="414.8" clip-path="url(#terminal-903400804-line-18)">●&#160;S.&#160;14,&#160;Zitat&#160;gefunden&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="459.2" textLength="12.2" clip-path="url(#terminal-903400804-line-18)">
+</text><text class="terminal-903400804-r3" x="24.4" y="483.6" textLength="414.8" clip-path="url(#terminal-903400804-line-19)">Technisches&#160;Angebot&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r1" x="475.8" y="483.6" textLength="268.4" clip-path="url(#terminal-903400804-line-19)">80&#160;Punkte&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r7" x="780.8" y="483.6" textLength="414.8" clip-path="url(#terminal-903400804-line-19)">●&#160;S.&#160;13,&#160;Zitat&#160;gefunden&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="483.6" textLength="12.2" clip-path="url(#terminal-903400804-line-19)">
+</text><text class="terminal-903400804-r3" x="24.4" y="508" textLength="414.8" clip-path="url(#terminal-903400804-line-20)">Wirtschaftliches&#160;Angebot&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r1" x="475.8" y="508" textLength="268.4" clip-path="url(#terminal-903400804-line-20)">20&#160;Punkte&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r7" x="780.8" y="508" textLength="414.8" clip-path="url(#terminal-903400804-line-20)">●&#160;S.&#160;13,&#160;Zitat&#160;gefunden&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="508" textLength="12.2" clip-path="url(#terminal-903400804-line-20)">
+</text><text class="terminal-903400804-r3" x="24.4" y="532.4" textLength="414.8" clip-path="url(#terminal-903400804-line-21)">Technischer&#160;Bericht&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r1" x="475.8" y="532.4" textLength="268.4" clip-path="url(#terminal-903400804-line-21)">35&#160;Punkte&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r7" x="780.8" y="532.4" textLength="414.8" clip-path="url(#terminal-903400804-line-21)">●&#160;S.&#160;13,&#160;Zitat&#160;gefunden&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="532.4" textLength="12.2" clip-path="url(#terminal-903400804-line-21)">
+</text><text class="terminal-903400804-r3" x="1220" y="556.8" textLength="12.2" clip-path="url(#terminal-903400804-line-22)">
+</text><text class="terminal-903400804-r8" x="0" y="581.2" textLength="24.4" clip-path="url(#terminal-903400804-line-23)">╭─</text><text class="terminal-903400804-r8" x="24.4" y="581.2" textLength="378.2" clip-path="url(#terminal-903400804-line-23)">&#160;Offene&#160;Frage&#160;für&#160;den&#160;Vertrieb&#160;</text><text class="terminal-903400804-r8" x="402.6" y="581.2" textLength="793" clip-path="url(#terminal-903400804-line-23)">─────────────────────────────────────────────────────────────────</text><text class="terminal-903400804-r8" x="1195.6" y="581.2" textLength="24.4" clip-path="url(#terminal-903400804-line-23)">─╮</text><text class="terminal-903400804-r3" x="1220" y="581.2" textLength="12.2" clip-path="url(#terminal-903400804-line-23)">
+</text><text class="terminal-903400804-r8" x="0" y="605.6" textLength="12.2" clip-path="url(#terminal-903400804-line-24)">│</text><text class="terminal-903400804-r3" x="24.4" y="605.6" textLength="1085.8" clip-path="url(#terminal-903400804-line-24)">Art.&#160;4.2&#160;verweist&#160;beim&#160;Avvalimento&#160;nur&#160;allgemein&#160;auf&#160;die&#160;geltenden&#160;Vorschriften.&#160;Ist&#160;der&#160;</text><text class="terminal-903400804-r8" x="1207.8" y="605.6" textLength="12.2" clip-path="url(#terminal-903400804-line-24)">│</text><text class="terminal-903400804-r3" x="1220" y="605.6" textLength="12.2" clip-path="url(#terminal-903400804-line-24)">
+</text><text class="terminal-903400804-r8" x="0" y="630" textLength="12.2" clip-path="url(#terminal-903400804-line-25)">│</text><text class="terminal-903400804-r3" x="24.4" y="630" textLength="719.8" clip-path="url(#terminal-903400804-line-25)">Nachweis&#160;der&#160;SOA-Qualifikation&#160;über&#160;einen&#160;Partner&#160;zulässig?</text><text class="terminal-903400804-r8" x="1207.8" y="630" textLength="12.2" clip-path="url(#terminal-903400804-line-25)">│</text><text class="terminal-903400804-r3" x="1220" y="630" textLength="12.2" clip-path="url(#terminal-903400804-line-25)">
+</text><text class="terminal-903400804-r8" x="0" y="654.4" textLength="1220" clip-path="url(#terminal-903400804-line-26)">╰──────────────────────────────────────────────────────────────────────────────────────────────────╯</text><text class="terminal-903400804-r3" x="1220" y="654.4" textLength="12.2" clip-path="url(#terminal-903400804-line-26)">
+</text><text class="terminal-903400804-r5" x="0" y="678.8" textLength="36.6" clip-path="url(#terminal-903400804-line-27)">&#160;3&#160;</text><text class="terminal-903400804-r5" x="61" y="678.8" textLength="207.4" clip-path="url(#terminal-903400804-line-27)">Referenz-Matching</text><text class="terminal-903400804-r4" x="305" y="678.8" textLength="48.8" clip-path="url(#terminal-903400804-line-27)">Code</text><text class="terminal-903400804-r3" x="1220" y="678.8" textLength="12.2" clip-path="url(#terminal-903400804-line-27)">
+</text><text class="terminal-903400804-r3" x="1220" y="703.2" textLength="12.2" clip-path="url(#terminal-903400804-line-28)">
+</text><text class="terminal-903400804-r4" x="24.4" y="727.6" textLength="329.4" clip-path="url(#terminal-903400804-line-29)">Projekt&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r4" x="390.4" y="727.6" textLength="219.6" clip-path="url(#terminal-903400804-line-29)">Ergebnis&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r4" x="646.6" y="727.6" textLength="549" clip-path="url(#terminal-903400804-line-29)">Begründung&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="727.6" textLength="12.2" clip-path="url(#terminal-903400804-line-29)">
+</text><text class="terminal-903400804-r3" x="0" y="752" textLength="1220" clip-path="url(#terminal-903400804-line-30)">&#160;──────────────────────────────────────────────────────────────────────────────────────────────────&#160;</text><text class="terminal-903400804-r3" x="1220" y="752" textLength="12.2" clip-path="url(#terminal-903400804-line-30)">
+</text><text class="terminal-903400804-r3" x="24.4" y="776.4" textLength="329.4" clip-path="url(#terminal-903400804-line-31)">Schulzentrum&#160;Waldeck&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r7" x="390.4" y="776.4" textLength="219.6" clip-path="url(#terminal-903400804-line-31)">Rang&#160;1,&#160;Score&#160;0,47</text><text class="terminal-903400804-r3" x="646.6" y="776.4" textLength="549" clip-path="url(#terminal-903400804-line-31)">Kategorie&#160;Gebäudetechnik&#160;passt;&#160;Abschluss&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="776.4" textLength="12.2" clip-path="url(#terminal-903400804-line-31)">
+</text><text class="terminal-903400804-r3" x="646.6" y="800.8" textLength="549" clip-path="url(#terminal-903400804-line-32)">07/2020&#160;im&#160;Zeitraum;&#160;Auftragswert&#160;120.000&#160;€&#160;≥</text><text class="terminal-903400804-r3" x="1220" y="800.8" textLength="12.2" clip-path="url(#terminal-903400804-line-32)">
+</text><text class="terminal-903400804-r3" x="646.6" y="825.2" textLength="549" clip-path="url(#terminal-903400804-line-33)">Mindestwert&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="825.2" textLength="12.2" clip-path="url(#terminal-903400804-line-33)">
+</text><text class="terminal-903400804-r4" x="24.4" y="849.6" textLength="329.4" clip-path="url(#terminal-903400804-line-34)">Umspannwerk&#160;Nordtal&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r4" x="390.4" y="849.6" textLength="219.6" clip-path="url(#terminal-903400804-line-34)">ausgefiltert&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r4" x="646.6" y="849.6" textLength="549" clip-path="url(#terminal-903400804-line-34)">Kategorie&#160;Energietechnik&#160;passt&#160;nicht&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="849.6" textLength="12.2" clip-path="url(#terminal-903400804-line-34)">
+</text><text class="terminal-903400804-r4" x="24.4" y="874" textLength="329.4" clip-path="url(#terminal-903400804-line-35)">Produktionshalle&#160;Bergmoos&#160;&#160;</text><text class="terminal-903400804-r4" x="390.4" y="874" textLength="219.6" clip-path="url(#terminal-903400804-line-35)">ausgefiltert&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r4" x="646.6" y="874" textLength="549" clip-path="url(#terminal-903400804-line-35)">Kategorie&#160;Automation&#160;passt&#160;nicht&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="874" textLength="12.2" clip-path="url(#terminal-903400804-line-35)">
+</text><text class="terminal-903400804-r4" x="24.4" y="898.4" textLength="329.4" clip-path="url(#terminal-903400804-line-36)">PV-Freiflächenanlage&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r4" x="390.4" y="898.4" textLength="219.6" clip-path="url(#terminal-903400804-line-36)">ausgefiltert&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r4" x="646.6" y="898.4" textLength="549" clip-path="url(#terminal-903400804-line-36)">Kategorie&#160;Photovoltaik&#160;passt&#160;nicht&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="898.4" textLength="12.2" clip-path="url(#terminal-903400804-line-36)">
+</text><text class="terminal-903400804-r4" x="24.4" y="922.8" textLength="329.4" clip-path="url(#terminal-903400804-line-37)">Sonnleit&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-903400804-r3" x="1220" y="922.8" textLength="12.2" clip-path="url(#terminal-903400804-line-37)">
+</text><text class="terminal-903400804-r3" x="1220" y="947.2" textLength="12.2" clip-path="url(#terminal-903400804-line-38)">
+</text><text class="terminal-903400804-r5" x="0" y="971.6" textLength="36.6" clip-path="url(#terminal-903400804-line-39)">&#160;4&#160;</text><text class="terminal-903400804-r5" x="61" y="971.6" textLength="244" clip-path="url(#terminal-903400804-line-39)">Referenztext&#160;DE&#160;/&#160;IT</text><text class="terminal-903400804-r1" x="341.6" y="971.6" textLength="24.4" clip-path="url(#terminal-903400804-line-39)">KI</text><text class="terminal-903400804-r3" x="366" y="971.6" textLength="85.4" clip-path="url(#terminal-903400804-line-39)">&#160;&#160;&#160;+&#160;&#160;&#160;</text><text class="terminal-903400804-r5" x="451.4" y="971.6" textLength="36.6" clip-path="url(#terminal-903400804-line-39)">&#160;5&#160;</text><text class="terminal-903400804-r5" x="512.4" y="971.6" textLength="134.2" clip-path="url(#terminal-903400804-line-39)">Faktencheck</text><text class="terminal-903400804-r4" x="683.2" y="971.6" textLength="48.8" clip-path="url(#terminal-903400804-line-39)">Code</text><text class="terminal-903400804-r3" x="1220" y="971.6" textLength="12.2" clip-path="url(#terminal-903400804-line-39)">
+</text><text class="terminal-903400804-r4" x="0" y="996" textLength="24.4" clip-path="url(#terminal-903400804-line-40)">╭─</text><text class="terminal-903400804-r4" x="24.4" y="996" textLength="109.8" clip-path="url(#terminal-903400804-line-40)">&#160;Deutsch&#160;</text><text class="terminal-903400804-r4" x="134.2" y="996" textLength="1061.4" clip-path="url(#terminal-903400804-line-40)">───────────────────────────────────────────────────────────────────────────────────────</text><text class="terminal-903400804-r4" x="1195.6" y="996" textLength="24.4" clip-path="url(#terminal-903400804-line-40)">─╮</text><text class="terminal-903400804-r3" x="1220" y="996" textLength="12.2" clip-path="url(#terminal-903400804-line-40)">
+</text><text class="terminal-903400804-r4" x="0" y="1020.4" textLength="12.2" clip-path="url(#terminal-903400804-line-41)">│</text><text class="terminal-903400804-r3" x="24.4" y="1020.4" textLength="1024.8" clip-path="url(#terminal-903400804-line-41)">Für&#160;die&#160;Gemeinde&#160;Fiktiv-Bach&#160;realisierte&#160;Muster&#160;Elektro&#160;von&#160;01/2020&#160;bis&#160;07/2020&#160;die&#160;</text><text class="terminal-903400804-r4" x="1207.8" y="1020.4" textLength="12.2" clip-path="url(#terminal-903400804-line-41)">│</text><text class="terminal-903400804-r3" x="1220" y="1020.4" textLength="12.2" clip-path="url(#terminal-903400804-line-41)">
+</text><text class="terminal-903400804-r4" x="0" y="1044.8" textLength="12.2" clip-path="url(#terminal-903400804-line-42)">│</text><text class="terminal-903400804-r3" x="24.4" y="1044.8" textLength="1171.2" clip-path="url(#terminal-903400804-line-42)">Elektroinstallation&#160;und&#160;Gebäudeautomation&#160;für&#160;den&#160;Neubau&#160;des&#160;Schulzentrums&#160;Waldeck&#160;(Auftragswert</text><text class="terminal-903400804-r4" x="1207.8" y="1044.8" textLength="12.2" clip-path="url(#terminal-903400804-line-42)">│</text><text class="terminal-903400804-r3" x="1220" y="1044.8" textLength="12.2" clip-path="url(#terminal-903400804-line-42)">
+</text><text class="terminal-903400804-r4" x="0" y="1069.2" textLength="12.2" clip-path="url(#terminal-903400804-line-43)">│</text><text class="terminal-903400804-r3" x="24.4" y="1069.2" textLength="1049.2" clip-path="url(#terminal-903400804-line-43)">120.000&#160;€&#160;netto).&#160;Der&#160;Leistungsumfang&#160;entspricht&#160;dem&#160;Gegenstand&#160;dieser&#160;Ausschreibung:&#160;</text><text class="terminal-903400804-r4" x="1207.8" y="1069.2" textLength="12.2" clip-path="url(#terminal-903400804-line-43)">│</text><text class="terminal-903400804-r3" x="1220" y="1069.2" textLength="12.2" clip-path="url(#terminal-903400804-line-43)">
+</text><text class="terminal-903400804-r4" x="0" y="1093.6" textLength="12.2" clip-path="url(#terminal-903400804-line-44)">│</text><text class="terminal-903400804-r3" x="24.4" y="1093.6" textLength="878.4" clip-path="url(#terminal-903400804-line-44)">Elektroanlagen&#160;und&#160;Gebäudeautomation&#160;in&#160;einem&#160;öffentlichen&#160;Schulgebäude.</text><text class="terminal-903400804-r4" x="1207.8" y="1093.6" textLength="12.2" clip-path="url(#terminal-903400804-line-44)">│</text><text class="terminal-903400804-r3" x="1220" y="1093.6" textLength="12.2" clip-path="url(#terminal-903400804-line-44)">
+</text><text class="terminal-903400804-r4" x="0" y="1118" textLength="1220" clip-path="url(#terminal-903400804-line-45)">╰──────────────────────────────────────────────────────────────────────────────────────────────────╯</text><text class="terminal-903400804-r3" x="1220" y="1118" textLength="12.2" clip-path="url(#terminal-903400804-line-45)">
+</text><text class="terminal-903400804-r4" x="0" y="1142.4" textLength="24.4" clip-path="url(#terminal-903400804-line-46)">╭─</text><text class="terminal-903400804-r4" x="24.4" y="1142.4" textLength="122" clip-path="url(#terminal-903400804-line-46)">&#160;Italiano&#160;</text><text class="terminal-903400804-r4" x="146.4" y="1142.4" textLength="1049.2" clip-path="url(#terminal-903400804-line-46)">──────────────────────────────────────────────────────────────────────────────────────</text><text class="terminal-903400804-r4" x="1195.6" y="1142.4" textLength="24.4" clip-path="url(#terminal-903400804-line-46)">─╮</text><text class="terminal-903400804-r3" x="1220" y="1142.4" textLength="12.2" clip-path="url(#terminal-903400804-line-46)">
+</text><text class="terminal-903400804-r4" x="0" y="1166.8" textLength="12.2" clip-path="url(#terminal-903400804-line-47)">│</text><text class="terminal-903400804-r3" x="24.4" y="1166.8" textLength="1159" clip-path="url(#terminal-903400804-line-47)">Per&#160;il&#160;Comune&#160;di&#160;Fiktiv-Bach,&#160;Muster&#160;Elektro&#160;ha&#160;realizzato&#160;dal&#160;01/2020&#160;al&#160;07/2020&#160;gli&#160;impianti&#160;</text><text class="terminal-903400804-r4" x="1207.8" y="1166.8" textLength="12.2" clip-path="url(#terminal-903400804-line-47)">│</text><text class="terminal-903400804-r3" x="1220" y="1166.8" textLength="12.2" clip-path="url(#terminal-903400804-line-47)">
+</text><text class="terminal-903400804-r4" x="0" y="1191.2" textLength="12.2" clip-path="url(#terminal-903400804-line-48)">│</text><text class="terminal-903400804-r3" x="24.4" y="1191.2" textLength="1134.6" clip-path="url(#terminal-903400804-line-48)">elettrici&#160;e&#160;l&#x27;automazione&#160;degli&#160;edifici&#160;per&#160;la&#160;nuova&#160;costruzione&#160;del&#160;polo&#160;scolastico&#160;Waldeck&#160;</text><text class="terminal-903400804-r4" x="1207.8" y="1191.2" textLength="12.2" clip-path="url(#terminal-903400804-line-48)">│</text><text class="terminal-903400804-r3" x="1220" y="1191.2" textLength="12.2" clip-path="url(#terminal-903400804-line-48)">
+</text><text class="terminal-903400804-r4" x="0" y="1215.6" textLength="12.2" clip-path="url(#terminal-903400804-line-49)">│</text><text class="terminal-903400804-r3" x="24.4" y="1215.6" textLength="1171.2" clip-path="url(#terminal-903400804-line-49)">(importo&#160;contrattuale&#160;120.000&#160;€&#160;netti).&#160;L&#x27;oggetto&#160;dei&#160;lavori&#160;corrisponde&#160;a&#160;quello&#160;della&#160;presente</text><text class="terminal-903400804-r4" x="1207.8" y="1215.6" textLength="12.2" clip-path="url(#terminal-903400804-line-49)">│</text><text class="terminal-903400804-r3" x="1220" y="1215.6" textLength="12.2" clip-path="url(#terminal-903400804-line-49)">
+</text><text class="terminal-903400804-r4" x="0" y="1240" textLength="12.2" clip-path="url(#terminal-903400804-line-50)">│</text><text class="terminal-903400804-r3" x="24.4" y="1240" textLength="1073.6" clip-path="url(#terminal-903400804-line-50)">gara:&#160;impianti&#160;elettrici&#160;e&#160;automazione&#160;degli&#160;edifici&#160;in&#160;un&#160;edificio&#160;scolastico&#160;pubblico.</text><text class="terminal-903400804-r4" x="1207.8" y="1240" textLength="12.2" clip-path="url(#terminal-903400804-line-50)">│</text><text class="terminal-903400804-r3" x="1220" y="1240" textLength="12.2" clip-path="url(#terminal-903400804-line-50)">
+</text><text class="terminal-903400804-r4" x="0" y="1264.4" textLength="1220" clip-path="url(#terminal-903400804-line-51)">╰──────────────────────────────────────────────────────────────────────────────────────────────────╯</text><text class="terminal-903400804-r3" x="1220" y="1264.4" textLength="12.2" clip-path="url(#terminal-903400804-line-51)">
+</text><text class="terminal-903400804-r7" x="24.4" y="1288.8" textLength="634.4" clip-path="url(#terminal-903400804-line-52)">●&#160;10&#160;von&#160;10&#160;Zahlen&#160;stimmen&#160;mit&#160;der&#160;Datenbank&#160;überein</text><text class="terminal-903400804-r3" x="1220" y="1288.8" textLength="12.2" clip-path="url(#terminal-903400804-line-52)">
+</text><text class="terminal-903400804-r3" x="1220" y="1313.2" textLength="12.2" clip-path="url(#terminal-903400804-line-53)">
+</text><text class="terminal-903400804-r7" x="0" y="1337.6" textLength="1220" clip-path="url(#terminal-903400804-line-54)">╭──────────────────────────────────────────────────────────────────────────────────────────────────╮</text><text class="terminal-903400804-r3" x="1220" y="1337.6" textLength="12.2" clip-path="url(#terminal-903400804-line-54)">
+</text><text class="terminal-903400804-r7" x="0" y="1362" textLength="12.2" clip-path="url(#terminal-903400804-line-55)">│</text><text class="terminal-903400804-r7" x="1207.8" y="1362" textLength="12.2" clip-path="url(#terminal-903400804-line-55)">│</text><text class="terminal-903400804-r3" x="1220" y="1362" textLength="12.2" clip-path="url(#terminal-903400804-line-55)">
+</text><text class="terminal-903400804-r7" x="0" y="1386.4" textLength="12.2" clip-path="url(#terminal-903400804-line-56)">│</text><text class="terminal-903400804-r9" x="36.6" y="1386.4" textLength="463.6" clip-path="url(#terminal-903400804-line-56)">Bereit&#160;zur&#160;Freigabe&#160;durch&#160;den&#160;Vertrieb</text><text class="terminal-903400804-r7" x="1207.8" y="1386.4" textLength="12.2" clip-path="url(#terminal-903400804-line-56)">│</text><text class="terminal-903400804-r3" x="1220" y="1386.4" textLength="12.2" clip-path="url(#terminal-903400804-line-56)">
+</text><text class="terminal-903400804-r7" x="0" y="1410.8" textLength="12.2" clip-path="url(#terminal-903400804-line-57)">│</text><text class="terminal-903400804-r4" x="36.6" y="1410.8" textLength="1024.8" clip-path="url(#terminal-903400804-line-57)">Alle&#160;Zitate&#160;belegt,&#160;alle&#160;Zahlen&#160;geprüft.&#160;Die&#160;KI&#160;schlägt&#160;vor,&#160;der&#160;Mensch&#160;entscheidet.</text><text class="terminal-903400804-r7" x="1207.8" y="1410.8" textLength="12.2" clip-path="url(#terminal-903400804-line-57)">│</text><text class="terminal-903400804-r3" x="1220" y="1410.8" textLength="12.2" clip-path="url(#terminal-903400804-line-57)">
+</text><text class="terminal-903400804-r7" x="0" y="1435.2" textLength="12.2" clip-path="url(#terminal-903400804-line-58)">│</text><text class="terminal-903400804-r7" x="1207.8" y="1435.2" textLength="12.2" clip-path="url(#terminal-903400804-line-58)">│</text><text class="terminal-903400804-r3" x="1220" y="1435.2" textLength="12.2" clip-path="url(#terminal-903400804-line-58)">
+</text><text class="terminal-903400804-r7" x="0" y="1459.6" textLength="1220" clip-path="url(#terminal-903400804-line-59)">╰──────────────────────────────────────────────────────────────────────────────────────────────────╯</text><text class="terminal-903400804-r3" x="1220" y="1459.6" textLength="12.2" clip-path="url(#terminal-903400804-line-59)">
+</text>
+    </g>
+    </g>
+</svg>

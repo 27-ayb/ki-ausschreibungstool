@@ -1,0 +1,82 @@
+[
+  {
+    "id": "REF-2022-014",
+    "name": { "de": "Umspannwerk Nordtal", "it": "Sottostazione Nordtal" },
+    "ort": "Fiktiv-Au",
+    "auftraggeber": "Gemeinde Fiktiv-Au",
+    "auftraggebertyp": "öffentlich",
+    "beginn": "2022-03-01",
+    "ende": "2022-11-30",
+    "auftragswert_eur": 1500000,
+    "kategorie": "Energietechnik",
+    "soa_kategorie": "OG10",
+    "beschreibung": {
+      "de": "Elektrotechnische Ausrüstung eines Umspannwerks inkl. Schaltanlagen",
+      "it": "Equipaggiamento elettrotecnico di una sottostazione, inclusi i quadri elettrici"
+    },
+    "rolle": "Bietergemeinschaft (Anteil 70 %)",
+    "ausfuehrungsbescheinigung": true,
+    "kundenfreigabe": true,
+    "status": "geprüft"
+  },
+  {
+    "id": "REF-2021-007",
+    "name": { "de": "Produktionshalle Bergmoos", "it": "Capannone produttivo Bergmoos" },
+    "ort": "Fiktiv-Ried",
+    "auftraggeber": "Fiktiv Industrie GmbH",
+    "auftraggebertyp": "privat",
+    "beginn": "2021-06-01",
+    "ende": "2022-02-28",
+    "auftragswert_eur": 250000,
+    "kategorie": "Automation",
+    "soa_kategorie": null,
+    "beschreibung": {
+      "de": "SPS-Automatisierung einer Fertigungslinie inkl. Sensorik",
+      "it": "Automazione PLC di una linea di produzione, inclusa la sensoristica"
+    },
+    "rolle": "Alleinbieter",
+    "ausfuehrungsbescheinigung": false,
+    "kundenfreigabe": true,
+    "status": "geprüft"
+  },
+  {
+    "id": "REF-2023-021",
+    "name": { "de": "PV-Freiflächenanlage Sonnleit", "it": "Impianto fotovoltaico a terra Sonnleit" },
+    "ort": "Fiktiv-Feld",
+    "auftraggeber": "Gemeinde Fiktiv-Feld",
+    "auftraggebertyp": "öffentlich",
+    "beginn": "2023-04-01",
+    "ende": "2023-09-30",
+    "auftragswert_eur": 750000,
+    "kategorie": "Photovoltaik",
+    "soa_kategorie": "OG9",
+    "beschreibung": {
+      "de": "Planung und Installation einer Photovoltaik-Freiflächenanlage",
+      "it": "Progettazione e installazione di un impianto fotovoltaico a terra"
+    },
+    "rolle": "Alleinbieter",
+    "ausfuehrungsbescheinigung": true,
+    "kundenfreigabe": true,
+    "status": "geprüft"
+  },
+  {
+    "id": "REF-2020-003",
+    "name": { "de": "Schulzentrum Waldeck", "it": "Polo scolastico Waldeck" },
+    "ort": "Fiktiv-Bach",
+    "auftraggeber": "Gemeinde Fiktiv-Bach",
+    "auftraggebertyp": "öffentlich",
+    "beginn": "2020-01-01",
+    "ende": "2020-07-31",
+    "auftragswert_eur": 120000,
+    "kategorie": "Gebäudetechnik",
+    "soa_kategorie": "OS30",
+    "beschreibung": {
+      "de": "Elektroinstallation und Gebäudeautomation Neubau Schulzentrum",
+      "it": "Impianti elettrici e automazione degli edifici per la nuova costruzione di un polo scolastico"
+    },
+    "rolle": "Alleinbieter",
+    "ausfuehrungsbescheinigung": true,
+    "kundenfreigabe": true,
+    "status": "geprüft"
+  }
+]

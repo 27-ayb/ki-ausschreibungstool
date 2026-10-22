@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540" width="760" height="540" font-family="Helvetica, Arial, sans-serif" font-size="13">
+  <title>Architektur: Verifizierte Daten und KI-Vorschläge münden in eine menschliche Freigabe</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#8A96A3"/>
+    </marker>
+  </defs>
+  <rect width="760" height="540" fill="#FFFFFF"/>
+  <text x="24" y="34" font-size="15" font-weight="700" fill="#18242E">Verifizierte Daten und KI-Vorschläge münden in eine menschliche Freigabe</text>
+
+  <!-- containers -->
+  <g fill="#F3F6F9" stroke="#C9D3DC">
+    <rect x="24" y="120" width="216" height="320" rx="8"/>
+    <rect x="272" y="120" width="216" height="320" rx="8"/>
+    <rect x="520" y="120" width="216" height="320" rx="8"/>
+  </g>
+  <g font-weight="700" fill="#18242E">
+    <text x="40" y="142">Datenquellen</text>
+    <text x="288" y="142">Verarbeitung</text>
+    <text x="536" y="142">Ausgabe und Freigabe</text>
+  </g>
+
+  <!-- connectors -->
+  <g fill="none" stroke="#8A96A3" stroke-width="1.25">
+    <path d="M380 96V120" marker-end="url(#a)"/>
+    <path d="M240 280H272" marker-end="url(#a)"/>
+    <path d="M488 280H520" marker-end="url(#a)"/>
+    <path d="M628 208V224" marker-end="url(#a)"/>
+    <path d="M628 280V296" marker-end="url(#a)"/>
+    <path d="M628 352V368" marker-end="url(#a)"/>
+    <path d="M628 424V464H132V440" marker-end="url(#a)" stroke-dasharray="4 3"/>
+  </g>
+
+  <!-- input -->
+  <rect x="288" y="56" width="184" height="40" rx="8" fill="#FFFFFF" stroke="#8A96A3" stroke-width="1.25"/>
+  <text x="380" y="80" text-anchor="middle" font-weight="700" fill="#18242E">Ausschreibung (PDF)</text>
+
+  <!-- data sources -->
+  <g fill="#FFFFFF" stroke="#8A96A3" stroke-width="1.25">
+    <rect x="40" y="152" width="184" height="56" rx="8"/>
+    <rect x="40" y="224" width="184" height="56" rx="8"/>
+    <rect x="40" y="296" width="184" height="56" rx="8"/>
+    <rect x="40" y="368" width="184" height="56" rx="8"/>
+    <rect x="288" y="152" width="184" height="56" rx="8"/>
+    <rect x="536" y="152" width="184" height="56" rx="8"/>
+    <rect x="536" y="224" width="184" height="56" rx="8"/>
+    <rect x="536" y="368" width="184" height="56" rx="8"/>
+  </g>
+  <!-- AI boxes -->
+  <g fill="#E6F1FA" stroke="#1F6FB2" stroke-width="2">
+    <rect x="288" y="224" width="184" height="56" rx="8"/>
+    <rect x="288" y="296" width="184" height="56" rx="8"/>
+    <rect x="288" y="368" width="184" height="56" rx="8"/>
+  </g>
+  <!-- human approval -->
+  <rect x="536" y="296" width="184" height="56" rx="8" fill="#FBF0DC" stroke="#A86A12" stroke-width="2"/>
+
+  <g font-weight="700" fill="#18242E">
+    <text x="52" y="176">Stammdaten</text>
+    <text x="52" y="248">ERP-Schnittstelle</text>
+    <text x="52" y="320">Zertifikatsbibliothek</text>
+    <text x="52" y="392">Referenzdatenbank</text>
+    <text x="300" y="176">Regel-Engine</text>
+    <text x="300" y="248">Anforderungsanalyse</text>
+    <text x="300" y="320">Matching und Ranking</text>
+    <text x="300" y="392">Textgenerierung</text>
+    <text x="548" y="176">Dokumentengenerator</text>
+    <text x="548" y="248">Compliance-Check</text>
+    <text x="548" y="320">Freigabe Vertrieb</text>
+    <text x="548" y="392">Export</text>
+  </g>
+  <g font-size="11.5" fill="#5A6873">
+    <text x="52" y="192">Firma, Personen, Partner</text>
+    <text x="52" y="264">Positionen via CSV / API</text>
+    <text x="52" y="336">ISO, SOA, UNI/PdR 125</text>
+    <text x="52" y="408">Projekte, Bilder, Texte</text>
+    <text x="300" y="192">Prüfregeln, Hard Filter</text>
+    <text x="300" y="264">Profil aus Ausschreibung</text>
+    <text x="300" y="336">Referenzen, Zertifikate</text>
+    <text x="300" y="408">Referenztexte DE / IT</text>
+    <text x="548" y="192">Bereiche 1–4 aus Vorlage</text>
+    <text x="548" y="264">Ampel vor der Abgabe</text>
+    <text x="548" y="336">Human-in-the-Loop</text>
+    <text x="548" y="408">Word / PDF, DE / IT</text>
+    <text x="380" y="484" text-anchor="middle">Feedback: neue Projekte und Vergabeergebnisse fließen zurück</text>
+  </g>
+
+  <!-- legend -->
+  <g font-size="11.5" fill="#18242E">
+    <rect x="24" y="507" width="14" height="14" rx="3" fill="#E6F1FA" stroke="#1F6FB2" stroke-width="2"/>
+    <text x="46" y="518">KI-Komponente</text>
+    <rect x="180" y="507" width="14" height="14" rx="3" fill="#FBF0DC" stroke="#A86A12" stroke-width="2"/>
+    <text x="202" y="518">Menschliche Freigabe</text>
+    <rect x="384" y="507" width="14" height="14" rx="3" fill="#FFFFFF" stroke="#8A96A3" stroke-width="1.25"/>
+    <text x="406" y="518">Daten und Regeln</text>
+  </g>
+</svg>

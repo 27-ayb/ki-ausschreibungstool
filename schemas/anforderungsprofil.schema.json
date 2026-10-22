@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Anforderungsprofil einer Ausschreibung",
+  "description": "Strukturierte Ausgabe von Prompt 1. Jede Anforderung trägt ihre Fundstelle.",
+  "type": "object",
+  "required": ["abgabefrist", "auftragsgegenstand", "referenzen", "zertifikate", "offene_fragen"],
+  "properties": {
+    "abgabefrist": { "type": ["string", "null"], "format": "date" },
+    "auftragsgegenstand": { "type": "string" },
+    "geschaetztes_volumen_eur": { "type": ["number", "null"], "minimum": 0 },
+    "soa_kategorien": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kategorie", "fundstelle"],
+        "properties": {
+          "kategorie": { "type": "string", "pattern": "^O[GS][0-9]+$" },
+          "klassifikation": { "type": ["string", "null"], "enum": ["I", "II", "III", "III-bis", "IV", "IV-bis", "V", "VI", "VII", "VIII", null] },
+          "fundstelle": { "type": "string" }
+        }
+      }
+    },
+    "referenzen": {
+      "type": "object",
+      "required": ["zeitraum_jahre", "mindestwert_eur", "fundstelle"],
+      "properties": {
+        "kategorie": { "type": ["string", "null"] },
+        "zeitraum_jahre": { "type": ["integer", "null"], "minimum": 1 },
+        "mindestwert_eur": { "type": ["number", "null"], "minimum": 0 },
+        "anzahl": { "type": ["integer", "null"], "minimum": 1 },
+        "nur_oeffentliche_auftraggeber": { "type": ["boolean", "null"] },
+        "fundstelle": { "type": "string" }
+      }
+    },
+    "zertifikate": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "pflicht", "fundstelle"],
+        "properties": {
+          "name": { "type": "string" },
+          "pflicht": { "type": "boolean" },
+          "punkte": { "type": ["number", "null"] },
+          "fundstelle": { "type": "string" }
+        }
+      }
+    },
+    "zuschlagskriterien": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kriterium", "fundstelle"],
+        "properties": {
+          "kriterium": { "type": "string" },
+          "punkte": { "type": ["number", "null"] },
+          "fundstelle": { "type": "string" }
+        }
+      }
+    },
+    "offene_fragen": { "type": "array", "items": { "type": "string" } }
+  }
+}

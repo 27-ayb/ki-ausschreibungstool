@@ -1,0 +1,26 @@
+{
+  "ausschreibung": "Neubau Grundschule Fiktiv-Tal – Elektro- und Gebäudeautomationsanlagen",
+  "auftragsgegenstand": "Elektroinstallation und Gebäudeautomation für den Neubau einer Grundschule",
+  "abgabefrist": "2026-11-27",
+  "geschaetztes_volumen_eur": 480000,
+  "soa_kategorien": [
+    { "kategorie": "OS30", "klassifikation": "II", "fundstelle": "S. 7, Art. 4.1" }
+  ],
+  "referenzen": {
+    "kategorie": "Gebäudetechnik",
+    "zeitraum_jahre": 10,
+    "mindestwert_eur": 100000,
+    "anzahl": 1,
+    "nur_oeffentliche_auftraggeber": false,
+    "fundstelle": "S. 9, Art. 4.3"
+  },
+  "zertifikate": [
+    { "name": "ISO 9001", "pflicht": true, "fundstelle": "S. 10, Art. 5.1" },
+    { "name": "ISO 14001", "pflicht": true, "fundstelle": "S. 10, Art. 5.2" },
+    { "name": "ISO 45001", "pflicht": false, "punkte": 4, "fundstelle": "S. 14, Art. 7.2" },
+    { "name": "UNI/PdR 125:2022", "pflicht": false, "punkte": 3, "fundstelle": "S. 14, Art. 7.3" }
+  ],
+  "offene_fragen": [
+    "Ist der Nachweis der SOA-Qualifikation über einen Partner (Avvalimento) zulässig? (S. 8, Art. 4.2)"
+  ]
+}

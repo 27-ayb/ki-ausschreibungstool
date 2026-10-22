@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Generierter Referenztext",
+  "description": "Strukturierte Ausgabe von Prompt 3. 'verwendete_felder' ermöglicht den automatischen Faktencheck.",
+  "type": "object",
+  "required": ["text_de", "text_it", "verwendete_felder"],
+  "additionalProperties": false,
+  "properties": {
+    "text_de": { "type": "string", "maxLength": 1000 },
+    "text_it": { "type": "string", "maxLength": 1000 },
+    "verwendete_felder": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "enum": ["name", "ort", "auftraggeber", "auftraggebertyp", "beginn", "ende", "auftragswert_eur", "kategorie", "soa_kategorie", "beschreibung", "rolle"] }
+    }
+  }
+}

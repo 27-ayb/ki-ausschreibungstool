@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ausschreibungs-Assistent – Prototyp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F3F6F9; --panel:#FFFFFF; --ink:#18242E; --muted:#5A6873; --line:#D6DEE6;
+  --petrol:#1F6FB2; --petrol-tint:#E6F1FA; --sky:#5AA9E6; --ok:#2E7D3A; --ok-tint:#E5F2E7;
+  --warn:#A86A12; --warn-tint:#FBF0DC; --bad:#B4392C; --bad-tint:#F8E3E0;
+  --r-s:6px; --r-m:10px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:15px;line-height:1.5;color:var(--ink);background:var(--bg);font-variant-numeric:tabular-nums}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--petrol);outline-offset:2px}
+h1,h2,h3{margin:0;line-height:1.25}
+h1{font-size:24px;font-weight:700;letter-spacing:-.01em}
+h2{font-size:17px;font-weight:600}
+h3{font-size:15px;font-weight:600}
+p{margin:0}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+/* shell */
+.top{display:flex;align-items:center;gap:20px;padding:12px 24px;background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.brand-mark{width:26px;height:26px;border-radius:7px;background:linear-gradient(160deg,var(--sky),var(--petrol));display:grid;place-items:center}
+.brand-mark svg{width:16px;height:16px}
+.tender{display:flex;flex-direction:column;line-height:1.25;padding-left:20px;border-left:1px solid var(--line)}
+.tender b{font-weight:600;font-size:14px}
+.tender span{font-size:13px;color:var(--muted)}
+.top-right{margin-left:auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.proto{font-size:12px;color:var(--muted);border:1px dashed var(--line);padding:3px 8px;border-radius:999px}
+.seg{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.seg-group{display:inline-flex;border:1px solid var(--line);border-radius:var(--r-s);overflow:hidden}
+.seg-group button{border:0;background:transparent;padding:4px 12px;cursor:pointer;font-weight:600;font-size:13px;color:var(--muted)}
+.seg-group button[aria-pressed="true"]{background:var(--ink);color:#fff}
+
+.layout{display:grid;grid-template-columns:260px 1fr;min-height:calc(100vh - 61px)}
+.side{background:var(--panel);border-right:1px solid var(--line);padding:20px 12px}
+.side h4{margin:0 0 8px 12px;font-size:13px;font-weight:600;color:var(--muted)}
+.side ol,.side ul{list-style:none;margin:0 0 24px;padding:0}
+.nav{width:100%;display:flex;align-items:center;gap:10px;text-align:left;border:0;background:transparent;padding:9px 12px;border-radius:var(--r-s);cursor:pointer}
+.nav:hover{background:var(--bg)}
+.nav[aria-current="page"]{background:var(--petrol-tint);box-shadow:inset 3px 0 0 var(--petrol)}
+.num{width:24px;height:24px;flex:none;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-size:12px;font-weight:600;color:var(--muted);background:#fff}
+.nav[data-state="done"] .num{background:var(--petrol);border-color:var(--petrol);color:#fff}
+.nav[data-state="warn"] .num{border-color:var(--warn);color:var(--warn)}
+.nav[data-state="bad"] .num{border-color:var(--bad);color:var(--bad)}
+.nav-txt{display:flex;flex-direction:column;line-height:1.25}
+.nav-txt b{font-weight:500;font-size:14px}
+.nav-txt span{font-size:12px;color:var(--muted)}
+.icon{width:24px;height:24px;flex:none;display:grid;place-items:center;color:var(--muted)}
+
+main{padding:28px 32px 64px;max-width:1120px;width:100%}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.head p{margin-top:4px;max-width:68ch}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-m);padding:20px;margin-bottom:16px}
+.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 20px}
+.fact span{display:block;font-size:12px;color:var(--muted)}
+.fact b{font-weight:600}
+
+/* buttons */
+.btn{border:1px solid var(--line);background:#fff;padding:8px 14px;border-radius:var(--r-s);cursor:pointer;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--petrol);border-color:var(--petrol);color:#fff}
+.btn.primary:hover{background:#185A91}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn.link{border:0;background:none;padding:0;color:var(--petrol);text-decoration:underline;text-underline-offset:3px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+/* tables */
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-weight:600;font-size:12px;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.num-r,th.num-r{text-align:right}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--bg);color:var(--muted);white-space:nowrap}
+.tag.excl{background:var(--bad-tint);color:var(--bad)}
+.tag.pts{background:var(--petrol-tint);color:var(--petrol)}
+.src{font-size:12px;color:var(--muted);white-space:nowrap}
+
+/* status lamps */
+.lamp{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.lamp::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--line);flex:none}
+.lamp.ok{color:var(--ok)}.lamp.ok::before{background:var(--ok)}
+.lamp.warn{color:var(--warn)}.lamp.warn::before{background:var(--warn)}
+.lamp.bad{color:var(--bad)}.lamp.bad::before{background:var(--bad)}
+
+.note{border-radius:var(--r-s);padding:12px 14px;font-size:14px;display:flex;gap:12px;align-items:flex-start;margin-top:12px}
+.note.ok{background:var(--ok-tint)}.note.warn{background:var(--warn-tint)}.note.bad{background:var(--bad-tint)}.note.info{background:var(--petrol-tint)}
+.note b{display:block}
+
+/* upload */
+.drop{border:1.5px dashed var(--line);border-radius:var(--r-m);padding:44px 24px;text-align:center;background:#fff}
+.drop p{margin:6px auto 18px;max-width:52ch}
+.working{display:flex;align-items:center;gap:14px;padding:28px}
+.bar{height:4px;border-radius:2px;background:var(--line);overflow:hidden;width:220px}
+.bar i{display:block;height:100%;width:40%;background:var(--petrol);animation:slide 1.1s ease-in-out infinite}
+@keyframes slide{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+
+/* forms */
+.form{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 18px}
+label.f{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted);font-weight:500}
+label.f input,select{border:1px solid var(--line);border-radius:var(--r-s);padding:8px 10px;background:#fff;color:var(--ink);font-size:14px}
+label.f input:focus,select:focus{border-color:var(--petrol);outline:none;box-shadow:0 0 0 3px var(--petrol-tint)}
+.auto{font-size:12px;color:var(--petrol);font-weight:600}
+.radio{display:flex;gap:18px;flex-wrap:wrap}
+.radio label{display:flex;gap:8px;align-items:center;cursor:pointer}
+
+/* references */
+.ref{border:1px solid var(--line);border-radius:var(--r-m);padding:16px;margin-top:12px}
+.ref.on{border-color:var(--petrol);box-shadow:inset 3px 0 0 var(--petrol)}
+.ref.off{background:var(--bg)}
+.ref-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.why{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.why span{font-size:12px;background:var(--ok-tint);color:var(--ok);padding:3px 8px;border-radius:999px;font-weight:500}
+.why span.no{background:var(--bad-tint);color:var(--bad)}
+.score{text-align:right}
+.score b{font-size:22px;font-weight:700;display:block;line-height:1}
+.gen{background:var(--bg);border-radius:var(--r-s);padding:12px 14px;margin-top:10px;font-size:14px}
+.gen-head{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--muted);margin-bottom:6px;flex-wrap:wrap}
+.check{color:var(--ok);font-weight:600}
+details summary{cursor:pointer;color:var(--muted);font-size:14px;margin-top:14px}
+
+/* traffic light — the one loud element */
+.ampel-wrap{display:flex;gap:20px;align-items:center}
+.ampel{width:58px;padding:9px 0;border-radius:29px;background:var(--ink);display:flex;flex-direction:column;align-items:center;gap:7px;flex:none}
+.ampel i{width:34px;height:34px;border-radius:50%;background:#33414B}
+.ampel[data-s="bad"] i:nth-child(1){background:#E0533F;box-shadow:0 0 16px #E0533F}
+.ampel[data-s="warn"] i:nth-child(2){background:#E8A33A;box-shadow:0 0 16px #E8A33A}
+.ampel[data-s="ok"] i:nth-child(3){background:#43A85A;box-shadow:0 0 16px #43A85A}
+.ampel-txt h2{font-size:20px}
+.checklist{list-style:none;padding:0;margin:16px 0 0}
+.checklist li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--line);font-size:14px}
+.checklist li .btn.link{font-size:13px}
+
+/* document preview */
+.paper{background:#fff;border:1px solid var(--line);border-radius:4px;padding:36px 40px;box-shadow:0 1px 0 var(--line);font-size:13.5px}
+.paper h1{font-size:20px}
+.paper .meta{color:var(--muted);margin:4px 0 22px;font-size:13px}
+.paper h3{margin:22px 0 8px;padding-bottom:6px;border-bottom:1.5px solid var(--ink);font-size:14px}
+.paper dl{display:grid;grid-template-columns:200px 1fr;gap:4px 12px;margin:0}
+.paper dt{color:var(--muted)}
+.paper dd{margin:0}
+.paper table{font-size:13px}
+.split{display:grid;grid-template-columns:360px 1fr;gap:16px;align-items:start}
+.log{list-style:none;padding:0;margin:10px 0 0;font-size:13px}
+.log li{padding:6px 0;border-top:1px solid var(--line);display:flex;gap:10px}
+.log time{color:var(--muted);flex:none;width:44px}
+
+.search{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.search input{flex:1;min-width:220px;border:1px solid var(--line);border-radius:var(--r-s);padding:9px 12px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 12px;cursor:pointer;font-size:13px;font-weight:500}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:var(--r-s);font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:20;max-width:90vw}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.locked{text-align:center;padding:48px 20px}
+.locked p{margin:8px 0 16px}
+footer.fn{font-size:12px;color:var(--muted);margin-top:28px}
+
+@media (max-width:980px){.split{grid-template-columns:1fr}.facts{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr}
+  .side{border-right:0;border-bottom:1px solid var(--line);padding:10px 12px;overflow-x:auto}
+  .side h4{display:none}
+  .side ol,.side ul{display:flex;gap:4px;margin:0}
+  .side nav{display:flex;gap:4px}
+  .nav{white-space:nowrap}
+  .nav-txt span{display:none}
+  main{padding:20px 16px 48px}
+  .grid2,.form{grid-template-columns:1fr}
+  .tender{border-left:0;padding-left:0}
+  .paper{padding:22px 18px}
+  .paper dl{grid-template-columns:1fr}
+  table{display:block;overflow-x:auto}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M9.5 1.5 3.5 9h4l-1 5.5 6-7.5h-4l1-5.5Z" fill="#fff"/></svg></div>
+    Ausschreibungs-Assistent
+  </div>
+  <div class="tender">
+    <b>Neubau Grundschule Fiktiv-Tal</b>
+    <span>Abgabe bis 27.11.2026</span>
+  </div>
+  <div class="top-right">
+    <div class="seg">Dokumentsprache
+      <div class="seg-group" role="group" aria-label="Dokumentsprache">
+        <button data-action="lang" data-v="de">DE</button>
+        <button data-action="lang" data-v="it">IT</button>
+      </div>
+    </div>
+    <span class="proto">Prototyp – alle Daten frei erfunden</span>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="side">
+    <nav aria-label="Navigation">
+      <div>
+        <h4>Angebot erstellen</h4>
+        <ol id="steps"></ol>
+      </div>
+      <div>
+        <h4>Daten</h4>
+        <ul id="data"></ul>
+      </div>
+    </nav>
+  </aside>
+  <main id="view" tabindex="-1"></main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ------------------------------------------------------------------ data (fictitious) */
+const DEADLINE = '2026-11-27', VOLUME = 480000;
+const S = {
+  view:'analyse', phase:'empty', f1:false, bid:null, years:10, lang:'de',
+  bg:false, erp:false, priceFixed:false, certFixed:false, selected:{waldeck:true},
+  f2:false, query:'', cat:'Alle', log:[],
+  master:{ name:'Muster Elektro GmbH | srl', street:'Musterstraße 1 / Via Esempio 1', city:'39999 Fiktiv-Stadt (BZ)',
+    vat:'IT00000000000', pec:'angebote@pec.muster-elektro.example',
+    rep:'Anna Beispiel', tech:'Markus Muster', sales:'Laura Test' }
+};
+const PARTNER = { name:'Partner Bau Fiktiv srl', soa:'OG1, Klasse III' };
+
+const PROJECTS = [
+  { id:'nordtal', name:{de:'Umspannwerk Nordtal',it:'Sottostazione Nordtal'}, ort:'Fiktiv-Au', ag:'Gemeinde Fiktiv-Au', typ:'öffentlich',
+    start:'2022-03', end:'2022-11-30', wert:1500000, cat:'Energietechnik', soa:'OG10', sim:.31,
+    d:{de:'Elektrotechnische Ausrüstung eines Umspannwerks inkl. Schaltanlagen',it:'Equipaggiamento elettrotecnico di una sottostazione, inclusi i quadri elettrici'} },
+  { id:'bergmoos', name:{de:'Produktionshalle Bergmoos',it:'Capannone produttivo Bergmoos'}, ort:'Fiktiv-Ried', ag:'Fiktiv Industrie GmbH', typ:'privat',
+    start:'2021-06', end:'2022-02-28', wert:250000, cat:'Automation', soa:'keine (privat)', sim:.48,
+    d:{de:'SPS-Automatisierung einer Fertigungslinie inkl. Sensorik',it:'Automazione PLC di una linea di produzione, inclusa la sensoristica'} },
+  { id:'sonnleit', name:{de:'PV-Freiflächenanlage Sonnleit',it:'Impianto fotovoltaico a terra Sonnleit'}, ort:'Fiktiv-Feld', ag:'Gemeinde Fiktiv-Feld', typ:'öffentlich',
+    start:'2023-04', end:'2023-09-30', wert:750000, cat:'Photovoltaik', soa:'OG9', sim:.22,
+    d:{de:'Planung und Installation einer Photovoltaik-Freiflächenanlage',it:'Progettazione e installazione di un impianto fotovoltaico a terra'} },
+  { id:'waldeck', name:{de:'Schulzentrum Waldeck',it:'Polo scolastico Waldeck'}, ort:'Fiktiv-Bach', ag:'Gemeinde Fiktiv-Bach', typ:'öffentlich',
+    start:'2020-01', end:'2020-07-31', wert:120000, cat:'Gebäudetechnik', soa:'OS30', sim:.92,
+    d:{de:'Elektroinstallation und Gebäudeautomation Neubau Schulzentrum',it:'Impianti elettrici e automazione degli edifici per la nuova costruzione di un polo scolastico'} }
+];
+const GEN = { waldeck:{
+  de:'Für die Gemeinde Fiktiv-Bach realisierte Muster Elektro von 01/2020 bis 07/2020 die Elektroinstallation und Gebäudeautomation für den Neubau des Schulzentrums Waldeck (Auftragswert 120.000 € netto). Der Leistungsumfang entspricht dem Gegenstand dieser Ausschreibung: Elektroanlagen und Gebäudeautomation in einem öffentlichen Schulgebäude.',
+  it:'Per il Comune di Fiktiv-Bach, Muster Elektro ha realizzato dal 01/2020 al 07/2020 gli impianti elettrici e l’automazione degli edifici per la nuova costruzione del polo scolastico Waldeck (importo contrattuale 120.000 € netti). L’oggetto dei lavori corrisponde a quello della presente gara: impianti elettrici e automazione degli edifici in un edificio scolastico pubblico.' } };
+
+const POSITIONS = [
+  { n:1, de:'Hauptverteilung und Unterverteiler', it:'Quadro generale e sottoquadri', q:1, u:{de:'psch',it:'a corpo'}, p:68500 },
+  { n:2, de:'Kabel und Leitungen', it:'Cavi e conduttori', q:1, u:{de:'psch',it:'a corpo'}, p:52300 },
+  { n:3, de:'LED-Beleuchtung inkl. Notbeleuchtung', it:'Illuminazione LED inclusa illuminazione di emergenza', q:240, u:{de:'Stk',it:'pz'}, p:310 },
+  { n:4, de:'KNX-Gebäudeautomation', it:'Automazione degli edifici KNX', q:1, u:{de:'psch',it:'a corpo'}, p:96800 },
+  { n:5, de:'Brandmeldeanlage', it:'Impianto di rivelazione incendi', q:1, u:{de:'psch',it:'a corpo'}, p:null, fix:38600 },
+  { n:6, de:'Datennetz und WLAN', it:'Rete dati e Wi-Fi', q:1, u:{de:'psch',it:'a corpo'}, p:41200 },
+  { n:7, de:'Photovoltaikanlage Dach 60 kWp', it:'Impianto fotovoltaico su tetto 60 kWp', q:1, u:{de:'psch',it:'a corpo'}, p:78000 }
+];
+const CERTS = () => [
+  { req:'Qualitätsmanagement (Pflicht)', name:'ISO 9001', it:'Sistema di gestione per la qualità', until:'2027-05-14', s:'ok' },
+  { req:'Umweltmanagement, CAM (Pflicht)', name:'ISO 14001', it:'Sistema di gestione ambientale',
+    until: S.certFixed ? '2029-11-14' : '2026-11-15', s: S.certFixed ? 'ok' : 'bad', id:'14001' },
+  { req:'Arbeitsschutz (4 Punkte)', name:'ISO 45001', it:'Sistema di gestione salute e sicurezza', until:'2028-03-02', s:'ok' },
+  { req:'SOA OS30, Klasse II (Pflicht)', name:'SOA OS30, Klasse III', it:'Attestazione SOA OS30, classifica III', until:'2028-06-30', s:'ok' },
+  { req:'Gleichstellung UNI/PdR 125 (3 Punkte)', name:null, it:null, until:null, s:'warn', id:'pdr' }
+];
+
+/* ------------------------------------------------------------------ helpers */
+const $ = s => document.querySelector(s);
+const eur = v => new Intl.NumberFormat(S.lang==='it'?'it-IT':'de-DE',{style:'currency',currency:'EUR'}).format(v);
+const eur0 = v => new Intl.NumberFormat('de-DE',{maximumFractionDigits:0}).format(v)+' €';
+const date = iso => { const [y,m,d] = iso.split('-'); return `${d}.${m}.${y}`; };
+const dateL = iso => { const [y,m,d] = iso.split('-'); return S.lang==='it' ? `${d}/${m}/${y}` : `${d}.${m}.${y}`; };
+const mmyy = iso => { const [y,m] = iso.split('-'); return `${m}/${y}`; };
+const days = (a,b) => (Date.parse(a)-Date.parse(b))/864e5;
+const earliestEnd = () => { const d = new Date(DEADLINE); d.setFullYear(d.getFullYear()-S.years); return d.toISOString().slice(0,10); };
+const now = () => new Date().toTimeString().slice(0,5);
+function log(t){ S.log.unshift({t:now(), txt:t}); }
+function toast(t){ const el=$('#toast'); el.textContent=t; el.classList.add('show'); clearTimeout(toast.h); toast.h=setTimeout(()=>el.classList.remove('show'),2600); }
+
+function evalRef(p){
+  const checks = [
+    { ok: p.cat==='Gebäudetechnik', yes:`Kategorie ${p.cat} passt`, no:`Kategorie ${p.cat} passt nicht` },
+    { ok: p.end >= earliestEnd(), yes:`Abschluss ${mmyy(p.end)}, im Zeitraum`, no:`Abschluss ${mmyy(p.end)} liegt vor dem ${date(earliestEnd())}` },
+    { ok: p.wert >= 100000, yes:`${eur0(p.wert)} ≥ 100.000 €`, no:`${eur0(p.wert)} < 100.000 €` },
+  ];
+  const pass = checks.every(c=>c.ok);
+  const sSize = Math.min(p.wert,VOLUME)/Math.max(p.wert,VOLUME);
+  const sAge = Math.max(0, 1 - days(DEADLINE,p.end)/(365*S.years));
+  const sAg = p.typ==='öffentlich' ? 1 : .5;
+  const score = .5*p.sim + .25*sSize + .15*sAge + .1*sAg;
+  return { checks, pass, score };
+}
+const passingRefs = () => PROJECTS.filter(p => evalRef(p).pass);
+const usedRefs = () => passingRefs().filter(p => S.selected[p.id]);
+const positions = () => POSITIONS.map(x => ({...x, p: x.p != null ? x.p : (S.priceFixed ? x.fix : null)}));
+const sums = () => { const net = positions().reduce((a,x)=>a+(x.p||0)*x.q,0); return {net, vat:net*.22, gross:net*1.22}; };
+
+function compliance(){
+  const items = [
+    { k:'Anforderungsprofil freigegeben', s: S.f1?'ok':'bad', go:'analyse' },
+    { k:'Angebot vollständig importiert', s: !S.erp?'bad':(S.priceFixed?'ok':'bad'), go:'angebot' },
+    { k:'Pflichtnachweise gültig bis zur Abgabefrist', s: S.certFixed?'ok':'bad', go:'qualitaet' },
+    { k:'Geforderte Referenzen vorhanden', s: usedRefs().length>=1?'ok':'bad', go:'qualitaet' },
+    { k:'Prämienpunkte Gleichstellung (UNI/PdR 125)', s:'warn', go:'qualitaet' }
+  ];
+  const overall = items.some(i=>i.s==='bad') ? 'bad' : items.some(i=>i.s==='warn') ? 'warn' : 'ok';
+  return { items, overall };
+}
+
+/* ------------------------------------------------------------------ navigation */
+const STEPS = [
+  { id:'analyse', t:'Ausschreibung analysieren', sub:()=> S.f1?'freigegeben':(S.phase==='done'?'Profil prüfen':'offen'), st:()=> S.f1?'done':(S.phase==='done'?'warn':'') },
+  { id:'eckdaten', t:'Eckdaten', sub:()=> S.f1?'aus Stammdaten':'nach Freigabe 1', st:()=> S.f1?'done':'' },
+  { id:'angebot', t:'Angebot aus ERP', sub:()=> !S.erp?'offen':(S.priceFixed?'importiert':'1 Hinweis'), st:()=> !S.erp?'':(S.priceFixed?'done':'warn') },
+  { id:'qualitaet', t:'Qualität und Referenzen', sub:()=> { const c=compliance().items; return (c[2].s==='ok'&&c[3].s==='ok')?'Pflicht erfüllt':'Lücken offen'; },
+    st:()=> { const c=compliance().items; return !S.f1?'':(c[2].s==='ok'&&c[3].s==='ok')?'done':'bad'; } },
+  { id:'pruefen', t:'Prüfen und exportieren', sub:()=> S.f2?'freigegeben':'Freigabe 2', st:()=> S.f2?'done':'' }
+];
+const DATA = [
+  { id:'stammdaten', t:'Stammdaten', i:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>' },
+  { id:'referenzen', t:'Referenzdatenbank', i:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg>' },
+  { id:'zertifikate', t:'Zertifikate', i:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="9" r="5"/><path d="m9 13-1.5 8L12 18.5 16.5 21 15 13"/></svg>' }
+];
+function renderNav(){
+  $('#steps').innerHTML = STEPS.map((s,i)=>`<li><button class="nav" data-action="go" data-v="${s.id}" data-state="${s.st()}" ${S.view===s.id?'aria-current="page"':''}>
+    <span class="num">${s.st()==='done'?'✓':i+1}</span><span class="nav-txt"><b>${s.t}</b><span>${s.sub()}</span></span></button></li>`).join('');
+  $('#data').innerHTML = DATA.map(d=>`<li><button class="nav" data-action="go" data-v="${d.id}" ${S.view===d.id?'aria-current="page"':''}>
+    <span class="icon">${d.i}</span><span class="nav-txt"><b>${d.t}</b></span></button></li>`).join('');
+  document.querySelectorAll('[data-action="lang"]').forEach(b=>b.setAttribute('aria-pressed', b.dataset.v===S.lang));
+}
+
+/* ------------------------------------------------------------------ views */
+const V = {};
+
+V.analyse = () => {
+  const head = `<div class="head"><div><h1>Ausschreibung analysieren</h1>
+    <p class="muted">Die KI liest die Unterlagen und erstellt ein Anforderungsprofil. Jede Anforderung zeigt ihre Fundstelle im Original.</p></div></div>`;
+  if (S.phase==='empty') return head + `<div class="drop">
+      <h2>Ausschreibungsunterlagen hochladen</h2>
+      <p class="muted">PDF auf Deutsch oder Italienisch. Für diesen Prototyp steht eine fiktive Ausschreibung bereit.</p>
+      <div class="actions" style="justify-content:center"><button class="btn primary" data-action="analyse">Beispiel-Ausschreibung analysieren</button></div>
+      <p class="small muted" style="margin:14px auto 0">Grundschule_Fiktiv-Tal_Disciplinare.pdf, 42 Seiten</p></div>`;
+  if (S.phase==='working') return head + `<div class="panel working"><div class="bar"><i></i></div><p>Unterlagen werden gelesen und Anforderungen extrahiert …</p></div>`;
+  const reqs = [
+    ['SOA-Qualifikation','OS30, Klasse II','Ausschluss','S. 7, Art. 4.1'],
+    ['Referenzen', `mind. 1 vergleichbares Projekt, letzte <select data-action="years" aria-label="Referenzzeitraum">${[10,5].map(y=>`<option value="${y}" ${S.years===y?'selected':''}>${y}</option>`).join('')}</select> Jahre, ≥ 100.000 €`,'Ausschluss','S. 9, Art. 4.3'],
+    ['Qualitätsmanagement','ISO 9001','Ausschluss','S. 10, Art. 5.1'],
+    ['Umweltmanagement (CAM)','ISO 14001','Ausschluss','S. 10, Art. 5.2'],
+    ['Arbeitsschutz','ISO 45001','4 Punkte','S. 14, Art. 7.2'],
+    ['Gleichstellung','UNI/PdR 125:2022','3 Punkte','S. 14, Art. 7.3'],
+    ['Technischer Bericht','max. 10 Seiten','35 Punkte','S. 13, Art. 7.1']
+  ];
+  return head + `<div class="panel"><div class="panel-head"><h2>Eckdaten der Ausschreibung</h2><span class="auto">von der KI extrahiert</span></div>
+    <div class="facts">
+      <div class="fact"><span>Vergabestelle</span><b>Gemeinde Fiktiv-Tal</b></div>
+      <div class="fact"><span>Gegenstand</span><b>Elektro- und Gebäudeautomationsanlagen</b></div>
+      <div class="fact"><span>Geschätztes Volumen</span><b>${eur0(VOLUME)}</b></div>
+      <div class="fact"><span>Abgabefrist</span><b>${date(DEADLINE)}, 12:00 Uhr</b></div>
+      <div class="fact"><span>Zuschlagskriterium</span><b>Wirtschaftlich günstigstes Angebot</b></div>
+      <div class="fact"><span>Gewichtung</span><b>Qualität 80, Preis 20</b></div>
+    </div></div>
+  <div class="panel"><div class="panel-head"><h2>Anforderungen</h2><span class="small muted">Werte prüfen und bei Bedarf korrigieren</span></div>
+    <table><thead><tr><th>Anforderung</th><th>Wert</th><th>Art</th><th>Fundstelle</th></tr></thead><tbody>
+    ${reqs.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td><span class="tag ${r[2]==='Ausschluss'?'excl':'pts'}">${r[2]==='Ausschluss'?'Ausschlusskriterium':r[2]}</span></td><td class="src">${r[3]}</td></tr>`).join('')}
+    </tbody></table>
+    <div class="note warn"><div><b>Offene Frage für den Vertrieb</b>Die Unterlagen regeln nicht eindeutig, ob die SOA-Qualifikation über einen Partner (Avvalimento) nachgewiesen werden darf. Fundstelle S. 8, Art. 4.2.</div></div>
+  </div>
+  <div class="panel"><div class="panel-head"><h2>Bid/No-Bid</h2></div>
+    <p class="muted small" style="margin-bottom:12px">SOA-Qualifikation vorhanden, Volumen im üblichen Rahmen, ${passingRefs().length} passende Referenz${passingRefs().length===1?'':'en'} in der Datenbank.</p>
+    <div class="radio" role="radiogroup" aria-label="Entscheidung">
+      <label><input type="radio" name="bid" data-action="bid" value="ja" ${S.bid==='ja'?'checked':''}> Wir bieten an</label>
+      <label><input type="radio" name="bid" data-action="bid" value="nein" ${S.bid==='nein'?'checked':''}> Wir bieten nicht an</label>
+    </div>
+    <div class="actions" style="margin-top:16px">
+      ${S.f1 ? `<span class="lamp ok">Freigabe 1 erteilt durch ${S.master.sales}</span><button class="btn" data-action="go" data-v="eckdaten">Weiter zu den Eckdaten</button>`
+             : `<button class="btn primary" data-action="f1" ${S.bid==='ja'?'':'disabled'}>Profil freigeben und Angebot starten</button><span class="small muted">Freigabe 1 von 2</span>`}
+    </div></div>`;
+};
+
+V.eckdaten = () => {
+  const head = `<div class="head"><div><h1>Eckdaten</h1><p class="muted">Bereich 1 wird vollständig aus den Stammdaten übernommen. Änderungen erfolgen zentral in den Stammdaten.</p></div>
+    <button class="btn" data-action="go" data-v="stammdaten">Stammdaten bearbeiten</button></div>`;
+  if (!S.f1) return head + locked('Zuerst das Anforderungsprofil freigeben','Die Eckdaten werden nach Freigabe 1 automatisch befüllt.','analyse','Zur Analyse');
+  const m = S.master;
+  return head + `<div class="panel"><div class="panel-head"><h2>Bieter</h2><span class="auto">automatisch aus Stammdaten</span></div>
+    <div class="facts">
+      <div class="fact"><span>Unternehmen</span><b>${m.name}</b></div>
+      <div class="fact"><span>Adresse</span><b>${m.street}, ${m.city}</b></div>
+      <div class="fact"><span>MwSt.-Nr.</span><b>${m.vat}</b></div>
+      <div class="fact"><span>PEC</span><b>${m.pec}</b></div>
+      <div class="fact"><span>Gesetzliche Vertretung</span><b>${m.rep}</b></div>
+      <div class="fact"><span>Technische Leitung</span><b>${m.tech}</b></div>
+    </div></div>
+  <div class="panel"><div class="panel-head"><h2>Teilnahmeform</h2></div>
+    <div class="radio" role="radiogroup" aria-label="Teilnahmeform">
+      <label><input type="radio" name="bg" data-action="bg" value="0" ${!S.bg?'checked':''}> Einzelbieter</label>
+      <label><input type="radio" name="bg" data-action="bg" value="1" ${S.bg?'checked':''}> Bietergemeinschaft</label>
+    </div>
+    ${S.bg ? `<div class="note info"><div><b>Partner aus den Stammdaten: ${PARTNER.name}</b>SOA ${PARTNER.soa}. Die Daten des Partners werden in Bereich 1 ergänzt.</div></div>` : ''}
+  </div>`;
+};
+
+V.angebot = () => {
+  const head = `<div class="head"><div><h1>Angebot aus ERP</h1><p class="muted">Die Positionen werden aus dem ERP übernommen, nicht abgetippt. Das System prüft sie automatisch auf Plausibilität.</p></div></div>`;
+  if (!S.erp) return head + `<div class="panel"><div class="form" style="margin-bottom:16px">
+      <label class="f">Quelle<select aria-label="Quelle"><option>ERP-Export (CSV / Excel)</option><option disabled>ERP-API (Ausbaustufe)</option></select></label>
+      <label class="f">Angebotsnummer im ERP<input value="ANG-2026-0815"></label></div>
+      <button class="btn primary" data-action="erp">Positionen importieren</button></div>`;
+  const pos = positions(), s = sums(), ratio = s.net/VOLUME;
+  return head + `<div class="panel"><div class="panel-head"><h2>Positionen</h2><span class="auto">importiert aus ANG-2026-0815</span></div>
+    <table><thead><tr><th>Pos.</th><th>Beschreibung</th><th class="num-r">Menge</th><th>Einheit</th><th class="num-r">Einheitspreis</th><th class="num-r">Gesamt</th></tr></thead><tbody>
+    ${pos.map(x=>`<tr><td>${x.n}</td><td>${x.de}</td><td class="num-r">${x.q}</td><td>${x.u.de}</td>
+      <td class="num-r">${x.p==null?'<span class="lamp bad">fehlt</span>':eur(x.p)}</td><td class="num-r">${x.p==null?'–':eur(x.p*x.q)}</td></tr>`).join('')}
+    <tr><td></td><td><b>Summe netto</b></td><td></td><td></td><td></td><td class="num-r"><b>${eur(s.net)}</b></td></tr>
+    <tr><td></td><td>MwSt. 22 %</td><td></td><td></td><td></td><td class="num-r">${eur(s.vat)}</td></tr>
+    <tr><td></td><td><b>Gesamt brutto</b></td><td></td><td></td><td></td><td class="num-r"><b>${eur(s.gross)}</b></td></tr>
+    </tbody></table></div>
+  <div class="panel"><h2>Plausibilitätsprüfung</h2>
+    <ul class="checklist">
+      <li><span>Summen und Zwischensummen stimmen</span><span class="lamp ok">geprüft</span></li>
+      <li><span>MwSt.-Satz 22 % korrekt angewendet</span><span class="lamp ok">geprüft</span></li>
+      <li><span>Alle Positionen mit Einheitspreis</span>${S.priceFixed?'<span class="lamp ok">geprüft</span>':'<span class="actions"><span class="lamp bad">Position 5 ohne Preis</span><button class="btn link" data-action="price">Preis im ERP nachladen</button></span>'}</li>
+      <li><span>Angebotssumme im Verhältnis zum Volumen</span><span class="lamp ${ratio<=1?'ok':'warn'}">${(ratio*100).toFixed(1).replace('.',',')} %</span></li>
+    </ul></div>`;
+};
+
+V.qualitaet = () => {
+  const head = `<div class="head"><div><h1>Qualität und Referenzen</h1><p class="muted">Nachweise und Referenzen werden passend zu den Anforderungen zusammengestellt. Die KI schlägt vor, der Vertrieb entscheidet.</p></div></div>`;
+  if (!S.f1) return head + locked('Zuerst das Anforderungsprofil freigeben','Erst mit dem Profil weiß das System, welche Nachweise und Referenzen gefordert sind.','analyse','Zur Analyse');
+  const certs = CERTS();
+  const refs = PROJECTS.map(p=>({p, e:evalRef(p)})).sort((a,b)=> (b.e.pass-a.e.pass) || (b.e.score-a.e.score));
+  const pass = refs.filter(r=>r.e.pass), fail = refs.filter(r=>!r.e.pass);
+  return head + `<div class="panel"><div class="panel-head"><h2>Qualitätsunterlagen</h2><span class="small muted">Gültigkeit geprüft gegen Abgabefrist ${date(DEADLINE)}</span></div>
+    <table><thead><tr><th>Anforderung</th><th>Nachweis aus der Bibliothek</th><th>Gültig bis</th><th>Status</th></tr></thead><tbody>
+    ${certs.map(c=>`<tr><td>${c.req}</td><td>${c.name ? c.name : '<span class="muted">nicht vorhanden</span>'}</td><td>${c.until?date(c.until):'–'}</td><td>
+      ${c.s==='ok'?'<span class="lamp ok">gültig</span>':c.s==='bad'?'<span class="lamp bad">läuft vor der Frist ab</span><br><button class="btn link" data-action="cert">Erneuertes Zertifikat hochladen</button>':'<span class="lamp warn">3 Punkte entgehen</span>'}</td></tr>`).join('')}
+    </tbody></table>
+    ${!S.certFixed?'<div class="note bad"><div><b>Ausschlussrisiko erkannt</b>ISO 14001 läuft am 15.11.2026 ab, zwölf Tage vor der Abgabefrist. Ohne gültigen Nachweis droht der Ausschluss.</div></div>':''}
+    <div class="note info"><div><b>Strategischer Hinweis</b>Eine Zertifizierung nach UNI/PdR 125 würde bei dieser und vergleichbaren Ausschreibungen Prämienpunkte bringen.</div></div>
+  </div>
+  <div class="panel"><div class="panel-head"><h2>Referenzen</h2><span class="small muted">Referenzzeitraum ${S.years} Jahre, ab ${date(earliestEnd())}</span></div>
+    ${pass.length===0?`<div class="note bad"><div><b>Referenzlücke: keine Referenz erfüllt alle Anforderungen</b>Optionen vor der Abgabe: Bietergemeinschaft mit einem Partner prüfen (Eckdaten) oder weitere Projekte in der Referenzdatenbank nachpflegen.</div></div>`:''}
+    ${pass.map(({p,e},i)=>refCard(p,e,i+1)).join('')}
+    ${fail.length?`<details ${pass.length===0?'open':''}><summary>${fail.length} Projekt${fail.length===1?'':'e'} ausgefiltert</summary>${fail.map(({p,e})=>refCard(p,e,null)).join('')}</details>`:''}
+  </div>`;
+};
+function refCard(p,e,rank){
+  const on = rank && S.selected[p.id];
+  const g = GEN[p.id];
+  return `<div class="ref ${rank?(on?'on':''):'off'}">
+    <div class="ref-top"><div><h3>${p.name.de}</h3><p class="small muted">${p.ort}, ${p.ag}, ${mmyy(p.start+'-01')} – ${mmyy(p.end)}, ${eur0(p.wert)}, SOA ${p.soa}</p></div>
+      ${rank?`<div class="score"><b>${e.score.toFixed(2).replace('.',',')}</b><span class="small muted">Score, Rang ${rank}</span></div>`:''}</div>
+    <div class="why">${e.checks.map(c=>`<span class="${c.ok?'':'no'}">${c.ok?c.yes:c.no}</span>`).join('')}${rank?(p.typ==='öffentlich'?'<span>öffentlicher Auftraggeber</span>':''):''}</div>
+    ${rank&&g?`<div class="gen"><div class="gen-head"><span>KI-Referenztext (${S.lang.toUpperCase()}), nur aus Datenbankfeldern</span><span class="check">Faktencheck: 4 von 4 Werten stimmen mit der Datenbank überein</span></div>${g[S.lang]}</div>`:''}
+    ${rank?`<label style="display:flex;gap:8px;align-items:center;margin-top:12px;cursor:pointer"><input type="checkbox" data-action="sel" data-v="${p.id}" ${on?'checked':''}> Für dieses Angebot verwenden</label>`:''}
+  </div>`;
+}
+
+V.pruefen = () => {
+  const c = compliance(), L = T[S.lang];
+  const word = {ok:'Bereit zur Freigabe', warn:'Bereit, mit Hinweisen', bad:'Nicht abgabefähig'}[c.overall];
+  const sub = {ok:'Alle Prüfpunkte erfüllt.', warn:'Keine Ausschlussrisiken. Hinweise prüfen.', bad:'Rote Punkte zuerst beheben.'}[c.overall];
+  return `<div class="head"><div><h1>Prüfen und exportieren</h1><p class="muted">Der Compliance-Check prüft das Dokument vor der Abgabe. Erst danach ist Freigabe 2 möglich.</p></div></div>
+  <div class="split"><div>
+    <div class="panel"><div class="ampel-wrap"><div class="ampel" data-s="${c.overall}" role="img" aria-label="Ampel: ${word}"><i></i><i></i><i></i></div>
+      <div class="ampel-txt"><h2>${word}</h2><p class="muted small">${sub}</p></div></div>
+      <ul class="checklist">${c.items.map(i=>`<li><span>${i.k}</span>${i.s==='ok'?'<span class="lamp ok">ok</span>':`<button class="btn link" data-action="go" data-v="${i.go}"><span class="lamp ${i.s}">${i.s==='bad'?'beheben':'ansehen'}</span></button>`}</li>`).join('')}</ul>
+    </div>
+    <div class="panel"><h2>Freigabe 2</h2>
+      ${S.f2?`<p class="lamp ok" style="margin:10px 0 14px">Freigegeben durch ${S.master.sales}</p>
+        <div class="actions"><button class="btn primary" data-action="export" data-v="Word">Als Word exportieren</button><button class="btn" data-action="export" data-v="PDF">Als PDF exportieren</button></div>`
+      :`<p class="small muted" style="margin:8px 0 14px">Mit der Freigabe bestätigt ${S.master.sales} die Richtigkeit aller Angaben.</p>
+        <button class="btn primary" data-action="f2" ${c.overall==='bad'?'disabled':''}>Dokument freigeben</button>`}
+    </div>
+    <div class="panel"><h2>Protokoll</h2>${S.log.length?`<ul class="log">${S.log.map(l=>`<li><time>${l.t}</time><span>${l.txt}</span></li>`).join('')}</ul>`:'<p class="small muted" style="margin-top:8px">Noch keine Aktionen.</p>'}</div>
+  </div>
+  <div class="paper" lang="${S.lang}">${docPreview(L)}</div></div>`;
+};
+
+const T = {
+  de:{title:'Angebot – Hauptdokument', obj:'Neubau Grundschule Fiktiv-Tal – Elektro- und Gebäudeautomationsanlagen', sa:'Vergabestelle: Gemeinde Fiktiv-Tal', frist:'Abgabefrist',
+    b1:'Bereich 1 – Eckdaten', b2:'Bereich 2 – Angebot', b3:'Bereich 3 – Qualitätsunterlagen', b4:'Bereich 4 – Referenzen',
+    bieter:'Bieter', adr:'Adresse', vat:'MwSt.-Nr.', rep:'Gesetzliche Vertretung', tech:'Technische Leitung', form:'Teilnahmeform', single:'Einzelbieter', bg:'Bietergemeinschaft mit',
+    pos:'Position', amount:'Betrag', net:'Angebotssumme netto', vat22:'MwSt. 22 %', gross:'Gesamtbetrag brutto', valid:'gültig bis',
+    period:'Ausführungszeitraum', value:'Auftragswert', client:'Auftraggeber', none:'Keine Referenz ausgewählt.', missing:'Angebot noch nicht importiert.', locked:'Wird nach Freigabe 1 befüllt.'},
+  it:{title:'Offerta – Documento principale', obj:'Nuova costruzione scuola primaria Fiktiv-Tal – impianti elettrici e di automazione degli edifici', sa:'Stazione appaltante: Comune di Fiktiv-Tal', frist:'Termine di presentazione',
+    b1:'Sezione 1 – Dati generali', b2:'Sezione 2 – Offerta', b3:'Sezione 3 – Documentazione di qualità', b4:'Sezione 4 – Referenze',
+    bieter:'Operatore economico', adr:'Indirizzo', vat:'Partita IVA', rep:'Legale rappresentante', tech:'Direttore tecnico', form:'Forma di partecipazione', single:'Operatore singolo', bg:'Raggruppamento temporaneo con',
+    pos:'Voce', amount:'Importo', net:'Importo offerto netto', vat22:'IVA 22 %', gross:'Importo totale lordo', valid:'valido fino al',
+    period:'Periodo di esecuzione', value:'Importo contrattuale', client:'Committente', none:'Nessuna referenza selezionata.', missing:'Offerta non ancora importata.', locked:'Compilata dopo l’approvazione 1.'}
+};
+function docPreview(L){
+  const m = S.master, lg = S.lang, s = sums();
+  const certs = CERTS().filter(c=>c.name);
+  return `<h1>${L.title}</h1><p class="meta">${L.obj}<br>${L.sa}<br>${L.frist}: ${dateL(DEADLINE)}</p>
+  <h3>${L.b1}</h3>${S.f1?`<dl><dt>${L.bieter}</dt><dd>${m.name}</dd><dt>${L.adr}</dt><dd>${m.street}, ${m.city}</dd><dt>${L.vat}</dt><dd>${m.vat}</dd>
+    <dt>PEC</dt><dd>${m.pec}</dd><dt>${L.rep}</dt><dd>${m.rep}</dd><dt>${L.tech}</dt><dd>${m.tech}</dd><dt>${L.form}</dt><dd>${S.bg?`${L.bg} ${PARTNER.name}`:L.single}</dd></dl>`:`<p class="muted">${L.locked}</p>`}
+  <h3>${L.b2}</h3>${S.erp?`<table><thead><tr><th>${L.pos}</th><th class="num-r">${L.amount}</th></tr></thead><tbody>
+    ${positions().map(x=>`<tr><td>${x.n}. ${x[lg]}</td><td class="num-r">${x.p==null?'–':eur(x.p*x.q)}</td></tr>`).join('')}
+    <tr><td><b>${L.net}</b></td><td class="num-r"><b>${eur(s.net)}</b></td></tr><tr><td>${L.vat22}</td><td class="num-r">${eur(s.vat)}</td></tr><tr><td><b>${L.gross}</b></td><td class="num-r"><b>${eur(s.gross)}</b></td></tr></tbody></table>`:`<p class="muted">${L.missing}</p>`}
+  <h3>${L.b3}</h3>${S.f1?`<table><tbody>${certs.map(c=>`<tr><td><b>${c.name}</b><br><span class="muted">${lg==='it'?c.it:c.req.replace(/ \(.*\)$/,'')}</span></td><td class="num-r">${L.valid} ${dateL(c.until)}</td></tr>`).join('')}</tbody></table>`:`<p class="muted">${L.locked}</p>`}
+  <h3>${L.b4}</h3>${S.f1&&usedRefs().length?usedRefs().map(p=>`<p><b>${p.name[lg]}</b></p>
+    <dl style="margin:6px 0 8px"><dt>${L.client}</dt><dd>${p.ag.replace('Gemeinde', lg==='it'?'Comune di':'Gemeinde')}</dd><dt>${L.period}</dt><dd>${mmyy(p.start+'-01')} – ${mmyy(p.end)}</dd><dt>${L.value}</dt><dd>${eur(p.wert)}</dd></dl>
+    <p>${GEN[p.id]?GEN[p.id][lg]:p.d[lg]}</p>`).join(''):`<p class="muted">${S.f1?L.none:L.locked}</p>`}`;
+}
+
+V.stammdaten = () => {
+  const m = S.master, f = (k,l) => `<label class="f">${l}<input data-bind="${k}" value="${m[k]}"></label>`;
+  return `<div class="head"><div><h1>Stammdaten</h1><p class="muted">Einmal gepflegt, in jedem neuen Angebot automatisch übernommen. Probieren Sie es aus: Ändern Sie den Firmennamen und öffnen Sie danach „Prüfen und exportieren“.</p></div></div>
+  <div class="panel"><div class="panel-head"><h2>Unternehmen</h2></div><div class="form">
+    ${f('name','Firmenname (DE | IT)')}${f('vat','MwSt.-Nr. / Partita IVA')}${f('street','Straße (DE / IT)')}${f('city','PLZ, Ort, Provinz')}${f('pec','PEC-Adresse')}</div></div>
+  <div class="panel"><div class="panel-head"><h2>Personen</h2></div><div class="form">
+    ${f('rep','Gesetzliche Vertretung / Legale rappresentante')}${f('tech','Technische Leitung / Direttore tecnico')}${f('sales','Vertrieb, Freigabeberechtigt')}</div></div>
+  <div class="panel"><div class="panel-head"><h2>Partner für Bietergemeinschaften</h2></div>
+    <table><thead><tr><th>Partner</th><th>SOA</th><th>Letzte Zusammenarbeit</th></tr></thead><tbody><tr><td>${PARTNER.name}</td><td>${PARTNER.soa}</td><td>2024</td></tr></tbody></table></div>
+  <div class="actions"><button class="btn primary" data-action="save">Stammdaten speichern</button></div>`;
+};
+
+V.referenzen = () => {
+  const cats = ['Alle', ...new Set(PROJECTS.map(p=>p.cat))];
+  const q = S.query.toLowerCase();
+  const list = PROJECTS.filter(p => (S.cat==='Alle'||p.cat===S.cat) && (!q || [p.name.de,p.name.it,p.ort,p.d.de,p.d.it,p.ag].join(' ').toLowerCase().includes(q)));
+  return `<div class="head"><div><h1>Referenzdatenbank</h1><p class="muted">Alle Projekte durchsuchbar nach Name, Ort, Beschreibung und Kategorie, auf Deutsch und Italienisch.</p></div>
+    <button class="btn" data-action="newref">Projekt erfassen</button></div>
+  <div class="panel"><div class="search"><input type="search" placeholder="Suchen, z. B. Schule oder fotovoltaico" value="${S.query}" data-action="query" aria-label="Referenzen durchsuchen">
+    ${cats.map(c=>`<button class="chip" data-action="cat" data-v="${c}" aria-pressed="${S.cat===c}">${c}</button>`).join('')}</div>
+    <table><thead><tr><th>Projekt</th><th>Ort</th><th>Zeitraum</th><th class="num-r">Auftragswert</th><th>Kategorie</th><th>SOA</th><th>Status</th></tr></thead><tbody>
+    ${list.length?list.map(p=>`<tr><td><b>${p.name.de}</b><br><span class="small muted">${p.d.de}</span></td><td>${p.ort}</td><td>${mmyy(p.start+'-01')} – ${mmyy(p.end)}</td><td class="num-r">${eur0(p.wert)}</td><td>${p.cat}</td><td>${p.soa}</td><td><span class="lamp ok">geprüft</span></td></tr>`).join('')
+      :`<tr><td colspan="7" class="muted">Kein Projekt gefunden. Suchbegriff ändern oder Kategorie „Alle“ wählen.</td></tr>`}
+    </tbody></table><p class="small muted" style="margin-top:10px">${list.length} von ${PROJECTS.length} Projekten</p></div>`;
+};
+
+V.zertifikate = () => `<div class="head"><div><h1>Zertifikate</h1><p class="muted">Bibliothek aller Nachweise. Das System erinnert automatisch vor Ablauf.</p></div></div>
+  <div class="panel"><table><thead><tr><th>Nachweis</th><th>Thema</th><th>Gültig bis</th><th>Status</th></tr></thead><tbody>
+  ${CERTS().filter(c=>c.name).map(c=>`<tr><td><b>${c.name}</b></td><td>${c.req.replace(/ \(.*\)$/,'')}</td><td>${date(c.until)}</td><td>${c.s==='ok'?'<span class="lamp ok">gültig</span>':'<span class="lamp bad">läuft in Kürze ab</span>'}</td></tr>`).join('')}
+  </tbody></table></div>`;
+
+function locked(t,p,go,b){ return `<div class="panel locked"><h2>${t}</h2><p class="muted">${p}</p><button class="btn primary" data-action="go" data-v="${go}">${b}</button></div>`; }
+
+/* ------------------------------------------------------------------ render + events */
+function render(focus){
+  renderNav();
+  $('#view').innerHTML = V[S.view]() + `<footer class="fn">Klickbarer Prototyp zum Use Case „Tool zur Erstellung von Ausschreibungsunterlagen“. Firmen-, Personen- und Projektdaten sind frei erfunden.</footer>`;
+  if (focus) $('#view').focus({preventScroll:true});
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-action]'); if (!b) return;
+  const a = b.dataset.action, v = b.dataset.v;
+  if (a==='go'){ S.view=v; render(true); window.scrollTo({top:0}); }
+  if (a==='lang'){ S.lang=v; render(); toast(v==='it'?'Dokument und Referenztexte jetzt auf Italienisch':'Dokument und Referenztexte jetzt auf Deutsch'); }
+  if (a==='analyse'){ S.phase='working'; render(); setTimeout(()=>{ S.phase='done'; log('KI-Anforderungsanalyse abgeschlossen'); render(); }, matchMedia('(prefers-reduced-motion: reduce)').matches?200:1600); }
+  if (a==='f1'){ S.f1=true; log(`Freigabe 1 durch ${S.master.sales}`); render(); toast('Profil freigegeben. Eckdaten wurden aus den Stammdaten übernommen.'); }
+  if (a==='erp'){ S.erp=true; log('7 Positionen aus ERP importiert'); render(); toast('7 Positionen importiert'); }
+  if (a==='price'){ S.priceFixed=true; log('Preis Position 5 aus ERP nachgeladen'); render(); toast('Preis für Position 5 nachgeladen'); }
+  if (a==='cert'){ S.certFixed=true; log('ISO 14001 (erneuert) hochgeladen'); render(); toast('Erneuertes Zertifikat hochgeladen, gültig bis 14.11.2029'); }
+  if (a==='f2'){ S.f2=true; log(`Freigabe 2 durch ${S.master.sales}`); render(); toast('Dokument freigegeben'); }
+  if (a==='export'){ log(`Export als ${v} (${S.lang.toUpperCase()})`); render(); toast(`Export als ${v} im Prototyp simuliert`); }
+  if (a==='save'){ log('Stammdaten gespeichert'); toast('Stammdaten gespeichert. Gilt für alle neuen Angebote.'); }
+  if (a==='cat'){ S.cat=v; render(); }
+  if (a==='newref'){ toast('In der Anwendung öffnet sich hier ein Formular mit allen Pflichtfeldern'); }
+});
+document.addEventListener('change', e => {
+  const t = e.target, a = t.dataset.action;
+  if (S.f2 && ['years','sel','bg'].includes(a)){ S.f2=false; log('Freigabe 2 zurückgesetzt: Angaben nach der Freigabe geändert'); }
+  if (a==='years'){ S.years=+t.value; log(`Referenzzeitraum auf ${S.years} Jahre korrigiert`); render(); toast(`Referenzzeitraum: ${S.years} Jahre`); }
+  if (a==='bid'){ S.bid=t.value; render(); }
+  if (a==='bg'){ S.bg=t.value==='1'; render(); }
+  if (a==='sel'){ S.selected[t.dataset.v]=t.checked; render(); }
+});
+document.addEventListener('input', e => {
+  const t = e.target;
+  if (t.dataset.bind){ S.master[t.dataset.bind]=t.value; renderNav(); }
+  if (t.dataset.action==='query'){ S.query=t.value; const pos=t.selectionStart; render(); const n=document.querySelector('[data-action="query"]'); n.focus(); n.setSelectionRange(pos,pos); }
+});
+render();
+</script>
+</body>
+</html>
